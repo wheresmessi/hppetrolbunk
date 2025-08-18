@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { MapPinIcon, PhoneIcon, EnvelopeIcon, ClockIcon } from '@heroicons/react/24/outline';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -54,23 +55,23 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             
             {/* Contact Information */}
-            <div>
+            <div className="w-full">
               <h2 className="text-3xl font-bold text-blue-900 mb-8">Get in Touch</h2>
               
               {/* Contact Cards */}
               <div className="space-y-6">
                 <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                      <div className="w-6 h-6 bg-blue-600 rounded-full"></div>
+                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <MapPinIcon className="w-6 h-6 text-blue-600" />
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold text-blue-800 mb-2">Visit Our Station</h3>
                       <p className="text-gray-700">
-                        Anna Nagar Auto Service<br />
-                        HP Petrol Bunk<br />
-                        Anna Nagar, Chennai - 600040<br />
-                        Tamil Nadu, India
+                        E/100, 3rd Avenue<br />
+                        Anna Nagar<br />
+                        Chennai, Tamil Nadu<br />
+                        Pin - 600 102
                       </p>
                     </div>
                   </div>
@@ -78,8 +79,8 @@ export default function ContactPage() {
 
                 <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
-                      <div className="w-6 h-6 bg-red-600 rounded-full"></div>
+                    <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <PhoneIcon className="w-6 h-6 text-red-600" />
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold text-blue-800 mb-2">Call Us</h3>
@@ -94,8 +95,8 @@ export default function ContactPage() {
 
                 <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                      <div className="w-6 h-6 bg-green-600 rounded-full"></div>
+                    <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <EnvelopeIcon className="w-6 h-6 text-green-600" />
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold text-blue-800 mb-2">Email & Online</h3>
@@ -110,8 +111,8 @@ export default function ContactPage() {
 
                 <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
-                      <div className="w-6 h-6 bg-purple-600 rounded-full"></div>
+                    <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <ClockIcon className="w-6 h-6 text-purple-600" />
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold text-blue-800 mb-2">Operating Hours</h3>
@@ -124,6 +125,7 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </div>
+
               </div>
             </div>
 
@@ -237,23 +239,22 @@ export default function ContactPage() {
       <section className="bg-white py-16 px-6 border-t">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-blue-900 mb-4">Find Us on Map</h2>
-            <p className="text-gray-700 text-lg">Located in the heart of Anna Nagar, Chennai</p>
+            <h2 className="text-4xl font-bold text-blue-900 mb-2">Find Us on Map</h2>
+            <p className="text-gray-700 text-lg">E/100, 3rd Avenue, Anna Nagar, Chennai - 600 102</p>
           </div>
           
-          {/* Placeholder for Google Map */}
-          <div className="bg-gray-200 rounded-lg overflow-hidden shadow-lg" style={{ height: '400px' }}>
-            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-100 to-blue-200">
-              <div className="text-center p-8">
-                <div className="w-16 h-16 bg-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <div className="w-8 h-8 bg-white rounded-full"></div>
-                </div>
-                <h3 className="text-xl font-semibold text-blue-800 mb-2">Interactive Map</h3>
-                <p className="text-gray-700 mb-4">Google Maps integration coming soon</p>
-                <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                  Get Directions
-                </button>
-              </div>
+          <div className="bg-white rounded-xl shadow-xl overflow-hidden border-2 border-blue-100">
+            <div className="h-[500px] w-full">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.347393178132!2d80.2117!3d13.0827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDA0JzU3LjgiTiA4MMKwMTInNDIuMSJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                title="Location Map"
+                className="w-full h-full"
+              ></iframe>
             </div>
           </div>
         </div>
