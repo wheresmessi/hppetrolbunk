@@ -87,7 +87,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <Header />
 
       {/* Hero Section with Slider */}
@@ -119,7 +119,7 @@ export default function HomePage() {
                 className={`w-2 h-2 sm:w-4 sm:h-4 rounded-full transition-all duration-300 ${
                   index === heroSlideIndex 
                     ? 'bg-red-600 scale-125' 
-                    : 'bg-red-200 hover:bg-red-500'
+                    : 'bg-white/60 hover:bg-red-400'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -143,9 +143,9 @@ export default function HomePage() {
           {/* Wave Design */}
           <div className="absolute top-0 left-0 w-full">
             <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-12 sm:h-16 lg:h-20 transform rotate-180">
-              <path d="M0,0 C150,60 350,0 600,30 C850,60 1050,0 1200,30 L1200,120 L0,120 Z" fill="#2563eb" opacity="0.8" />
+              <path d="M0,0 C150,60 350,0 600,30 C850,60 1050,0 1200,30 L1200,120 L0,120 Z" fill="#1e40af" opacity="0.8" />
               <path d="M0,20 C150,80 350,20 600,50 C850,80 1050,20 1200,50 L1200,120 L0,120 Z" fill="#1d4ed8" opacity="0.6" />
-              <path d="M0,40 C150,100 350,40 600,70 C850,100 1050,40 1200,70 L1200,120 L0,120 Z" fill="#1e40af" opacity="0.4" />
+              <path d="M0,40 C150,100 350,40 600,70 C850,100 1050,40 1200,70 L1200,120 L0,120 Z" fill="#012F73" opacity="0.4" />
             </svg>
           </div>
 
@@ -169,8 +169,8 @@ export default function HomePage() {
   <div className="w-full max-w-4xl">
     
     {/* Mobile View (stacked card) */}
-    <div className="relative bg-blue-200 rounded-lg shadow-lg p-6 flex flex-col items-center md:hidden h-[525px]">
-      <h2 className="text-xl font-bold text-black mb-3 underline decoration-red-200 decoration-2 underline-offset-4">
+    <div className="relative bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg shadow-lg p-6 flex flex-col items-center md:hidden h-[525px] border border-blue-200">
+      <h2 className="text-xl font-bold text-[#012F73] mb-3 underline decoration-red-600 decoration-2 underline-offset-4">
   Mr. J. Antony
 </h2>
 
@@ -192,11 +192,11 @@ export default function HomePage() {
     {/* Desktop / Tablet View (absolute positioning) */}
     <div className="hidden md:block relative w-full max-w-4xl h-80">
       {/* Blue Box Background */}
-      <div className="absolute inset-0 top-16 bg-blue-200 rounded-lg shadow-lg"></div>
+      <div className="absolute inset-0 top-16 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg shadow-lg border border-blue-200"></div>
       
       {/* Content Box */}
-      <div className="absolute left-0 top-16 w-3/4 h-64 bg-blue-200 rounded-lg p-8 flex flex-col justify-center z-10">
-        <h2 className="text-xl font-bold text-black mb-3 underline decoration-red-200 decoration-2 underline-offset-4">
+      <div className="absolute left-0 top-16 w-3/4 h-64 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-8 flex flex-col justify-center z-10">
+        <h2 className="text-xl font-bold text-[#012F73] mb-3 underline decoration-red-600 decoration-2 underline-offset-4">
   Mr. J. Antony
 </h2>
 <p className="text-gray-700 mb-6">
@@ -256,12 +256,12 @@ export default function HomePage() {
           <div className="max-w-full mx-auto">
             {/* Mobile Layout */}
             <div className="lg:hidden">
-              <div className="mx-4 mb-6 bg-blue-200 rounded-xl shadow-lg p-6 sm:p-8">
-                <h3 className="text-xl sm:text-2xl font-bold text-black mb-4 border-b-4 border-red-200 pb-2 inline-block">Mrs. A. Elizabeth</h3>
-                <p className="text-black text-sm sm:text-base leading-relaxed mb-4">
+              <div className="mx-4 mb-6 bg-gradient-to-br from-red-50 to-red-100 rounded-xl shadow-lg p-6 sm:p-8 border border-red-200">
+                <h3 className="text-xl sm:text-2xl font-bold text-[#012F73] mb-4 border-b-4 border-red-600 pb-2 inline-block">Mrs. A. Elizabeth</h3>
+                <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-4">
                   Following Mr. Antony's passing, leadership transitioned to Mrs. A. Elizabeth, an MBA graduate with a vision for innovation and growth. Under her stewardship, the business reached new heights:
                 </p>
-                <ul className="space-y-2 text-black text-sm sm:text-base">
+                <ul className="space-y-2 text-gray-700 text-sm sm:text-base">
                   <li><strong>2019 –</strong> Highest sales in South India</li>
                   <li><strong>2020 –</strong> Highest lube sales and best performance in HP Pay</li>
                   <li><strong>2021 –</strong> Recognition for presentation at Yeskaud</li>
@@ -269,7 +269,7 @@ export default function HomePage() {
                 </ul>
               </div>
               <div className="relative mx-4 h-80 mb-6">
-                <div className="absolute inset-x-0 top-16 h-64 bg-red-200 rounded-xl shadow-lg"></div>
+                <div className="absolute inset-x-0 top-16 h-64 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl shadow-lg border border-blue-200"></div>
                 <div className="absolute inset-x-0 bottom-0 h-80 z-10">
                   <img src="/elizabeth.png" alt="Elizabeth" className="w-full h-full object-contain" />
                 </div>
@@ -278,16 +278,16 @@ export default function HomePage() {
 
             {/* Desktop Layout */}
             <div className="hidden lg:block relative h-96">
-              <div className="absolute left-0 top-16 w-2/4 h-80 bg-red-200 rounded-r-xl shadow-lg"></div>
+              <div className="absolute left-0 top-16 w-2/4 h-80 bg-gradient-to-br from-blue-50 to-blue-100 rounded-r-xl shadow-lg border border-blue-200"></div>
               <div className="absolute left-0 top-0 w-2/4 h-full z-5">
                 <img src="/elizabeth.png" alt="Elizabeth" className="w-full h-full object-contain rounded-r-xl" />
               </div>
-              <div className="absolute right-0 top-0 w-2/3 h-80 bg-blue-200 rounded-l-xl shadow-lg p-6 sm:p-8 flex flex-col justify-center">
-                <h3 className="text-xl sm:text-2xl font-bold text-black mb-4 border-b-4 border-red-200 pb-2 inline-block">Mrs. A. Elizabeth</h3>
-                <p className="text-black text-sm sm:text-base leading-relaxed mb-4">
+              <div className="absolute right-0 top-0 w-2/3 h-80 bg-gradient-to-br from-red-50 to-red-100 rounded-l-xl shadow-lg p-6 sm:p-8 flex flex-col justify-center border border-red-200">
+                <h3 className="text-xl sm:text-2xl font-bold text-[#012F73] mb-4 border-b-4 border-red-600 pb-2 inline-block w-48">Mrs. A. Elizabeth</h3>
+                <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-4">
                   Following Mr. Antony's passing, leadership transitioned to Mrs. A. Elizabeth, an MBA graduate with a vision for innovation and growth. Under her stewardship, the business reached new heights:
                 </p>
-                <ul className="space-y-2 text-black text-sm sm:text-base">
+                <ul className="space-y-2 text-gray-700 text-sm sm:text-base">
                   <li><strong>2019 –</strong> Highest sales in South India</li>
                   <li><strong>2020 –</strong> Highest lube sales and best performance in HP Pay</li>
                   <li><strong>2021 –</strong> Recognition for presentation at Yeskaud</li>
@@ -297,6 +297,32 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+      </section>
+
+      {/* Company Growth and Performance */}
+      <section className="w-full px-4 sm:px-6 py-12 md:py-16 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="space-y-8">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-2">
+                Our <span className="text-red-600">Growth</span> Journey
+              </h2>
+              <div className="w-24 h-1 bg-red-500 mx-auto rounded-full"></div>
+            </div>
+            <div className="space-y-6 text-gray-700 leading-relaxed">
+              <p className="text-justify text-base sm:text-lg lg:text-lg max-w-5xl mx-auto">
+                Today, <span className="font-bold text-red-600">Annanagar Auto Service</span> maintains a monthly turnover of <span className="font-semibold">800KL</span> and an annual
+                turnover nearing <span className="font-semibold">10,000KL</span>. A tightly knit, vertically structured team ensures smooth day-
+                to-day operations and a consistent focus on service excellence.
+              </p>
+              <p className="text-justify text-base sm:text-lg lg:text-lg max-w-5xl mx-auto">
+                With a strong foundation built on tradition and an eye toward the future, <span className="font-bold text-red-600">Annanagar Auto
+                Service</span> remains committed to innovation, sustainability, and delivering the highest
+                standards of customer satisfaction in the automotive service industry.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* HPCL Section */}
@@ -343,7 +369,7 @@ export default function HomePage() {
             <div className={`space-y-4 sm:space-y-6 transition-all duration-700 delay-400 ease-out ${
               visibleSections.has('hpcl') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
             }`}>
-              <div className="bg-gradient-to-r from-transparent to-blue-300/70 p-4 sm:p-6 rounded-lg border border-blue-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+              <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-4 sm:p-6 rounded-lg border border-blue-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <h3 className="font-semibold mb-3 text-sm sm:text-base" style={{ color: '#012F73' }}>Registered Office and Corporate Headquarters</h3>
                 <p className="text-gray-700 text-xs sm:text-sm leading-relaxed">
                   17, Jamshedji Tata Road,<br />
@@ -353,7 +379,7 @@ export default function HomePage() {
                 </p>
               </div>
               
-              <div className="bg-gradient-to-r from-transparent to-blue-300/70 p-4 sm:p-6 rounded-lg border border-blue-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 delay-100">
+              <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-4 sm:p-6 rounded-lg border border-blue-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 delay-100">
                 <h3 className="font-semibold mb-3 text-sm sm:text-base" style={{ color: '#012F73' }}>Marketing Headquarters</h3>
                 <p className="text-gray-700 text-xs sm:text-sm leading-relaxed">
                   Petroleum House,<br />
@@ -363,7 +389,7 @@ export default function HomePage() {
                 </p>
               </div>
               
-              <div className="bg-gradient-to-r from-transparent to-blue-300/70 p-4 sm:p-6 rounded-lg border border-blue-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 delay-200">
+              <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-4 sm:p-6 rounded-lg border border-blue-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 delay-200">
                 <h3 className="font-semibold mb-3 text-sm sm:text-base" style={{ color: '#012F73' }}>Regional Office</h3>
                 <p className="text-gray-700 text-xs sm:text-sm leading-relaxed">
                   No. 1, Gandhi Irwin Road,<br />
