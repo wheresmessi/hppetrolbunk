@@ -52,7 +52,7 @@ export default function GalleryPage() {
       <Header />
       
       {/* Gallery Hero Section */}
-      <section className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-16 px-6">
+      <section className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-16 sm:py-20 lg:py-28 px-6">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-5xl font-bold mb-4">Gallery</h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { BiSolidGasPump, BiChevronDown, BiChevronUp } from "react-icons/bi";
-import { MdOilBarrel, MdLocalGasStation } from "react-icons/md";
+import { BiChevronDown, BiChevronUp } from "react-icons/bi";
+import { MdOilBarrel, MdLocalGasStation, MdStar, MdVerifiedUser, MdPeople } from "react-icons/md";
 
 interface ProductItem {
   name: string;
@@ -45,7 +45,7 @@ export default function ProductsPage() {
             "Compliance with prescribed specifications"
           ],
           badge: "Popular",
-          image: "/petrol.jpg"
+          image: "/images/petrol.png"
         },
         { 
           name: "Premium Diesel (High-Speed Diesel)", 
@@ -58,7 +58,7 @@ export default function ProductsPage() {
             "Clean and reliable fuel guaranteed"
           ],
           badge: "Best Seller",
-          image: "/four-gas-stat.jpg"
+          image: "/images/Diesel.png"
         }
       ]
     },
@@ -145,19 +145,26 @@ export default function ProductsPage() {
       <Header />
       
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-[#012F73] to-blue-800 text-white py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl font-bold mb-4">Quality Fuels & Lubricants</h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+      <div className="relative bg-gradient-to-r from-[#012F73] to-blue-600 text-white py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          style={{ backgroundImage: "url('/Powered by HP.png')" }}
+        ></div>
+        
+        {/* Content */}
+        <div className="relative max-w-7xl mx-auto text-center">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Quality Fuels & Lubricants</h1>
+          <p className="text-lg sm:text-xl text-blue-100 max-w-3xl mx-auto px-4">
             Premium HPCL products to keep your vehicles running smoothly and efficiently
           </p>
         </div>
       </div>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <main className="max-w-7xl mx-auto py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
         {/* Products by Category */}
-        <div className="space-y-16">
+        <div className="space-y-12 sm:space-y-16">
           {products.map((category, categoryIndex) => (
             <section 
               key={categoryIndex}
@@ -165,16 +172,16 @@ export default function ProductsPage() {
               className="scroll-mt-24"
             >
               {/* Category Header */}
-              <div className="mb-8">
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className={`p-3 rounded-lg bg-gradient-to-br ${category.color} border border-gray-200 shadow-sm`}>
+              <div className="mb-6 sm:mb-8">
+                <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-3 mb-4">
+                  <div className={`p-3 rounded-lg bg-gradient-to-br ${category.color} border border-gray-200 shadow-sm w-fit`}>
                     {React.cloneElement(category.icon, { 
-                      className: `w-6 h-6 ${categoryIndex === 0 ? 'text-[#012F73]' : 'text-red-600'}` 
+                      className: `w-5 h-5 sm:w-6 sm:h-6 ${categoryIndex === 0 ? 'text-[#012F73]' : 'text-red-600'}` 
                     })}
                   </div>
-                  <h2 className="text-3xl font-bold text-[#012F73]">{category.category}</h2>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-[#012F73]">{category.category}</h2>
                 </div>
-                <p className="text-gray-600 ml-12 text-lg">Premium quality {category.category.toLowerCase()} for optimal performance</p>
+                <p className="text-gray-600 text-sm sm:text-base px-2 sm:px-0">Premium quality {category.category.toLowerCase()} for optimal performance</p>
               </div>
               
               {/* Products Grid */}
@@ -189,15 +196,15 @@ export default function ProductsPage() {
                       className="w-full lg:w-[calc(50%-12px)] bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 self-start"
                     >
                       {/* Product Header */}
-                      <div className="p-6">
-                        <div className="flex items-start space-x-4">
+                      <div className="p-4 sm:p-6">
+                        <div className="flex flex-col sm:flex-row sm:items-start space-y-3 sm:space-y-0 sm:space-x-4">
                           {/* Product Image */}
                           {item.image && (
-                            <div className="w-20 h-20 flex-shrink-0 bg-gray-50 rounded-lg flex items-center justify-center p-2 border border-gray-200">
+                            <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto sm:mx-0 flex-shrink-0 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg overflow-hidden border border-gray-200 shadow-sm">
                               <img 
                                 src={item.image} 
                                 alt={item.name}
-                                className="h-16 w-16 object-contain"
+                                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                                 onError={(e) => {
                                   (e.target as HTMLImageElement).style.display = 'none';
                                 }}
@@ -206,11 +213,11 @@ export default function ProductsPage() {
                           )}
                           
                           {/* Product Info */}
-                          <div className="flex-1">
-                            <div className="flex justify-between items-start mb-2">
-                              <h3 className="font-bold text-lg text-[#012F73] leading-tight">{item.name}</h3>
+                          <div className="flex-1 text-center sm:text-left">
+                            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 space-y-2 sm:space-y-0">
+                              <h3 className="font-bold text-lg sm:text-xl text-[#012F73] leading-tight">{item.name}</h3>
                               {item.badge && (
-                                <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                                <span className={`px-3 py-1 rounded-full text-xs font-medium self-center sm:self-start ${
                                   item.badge === 'Popular' 
                                     ? 'bg-blue-100 text-blue-800' 
                                     : item.badge === 'Best Seller'
@@ -221,14 +228,14 @@ export default function ProductsPage() {
                                 </span>
                               )}
                             </div>
-                            <p className="text-gray-600 text-sm leading-relaxed">{item.shortDescription}</p>
+                            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{item.shortDescription}</p>
                           </div>
                         </div>
                         
                         {/* Expand/Collapse Button */}
                         <button
                           onClick={() => toggleCard(cardId)}
-                          className="mt-4 w-full flex items-center justify-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 border border-blue-200 rounded-lg transition-all duration-200 text-[#012F73] font-medium"
+                          className="mt-4 w-full flex items-center justify-center space-x-2 px-4 py-2 sm:py-3 bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 border border-blue-200 rounded-lg transition-all duration-200 text-[#012F73] font-medium text-sm sm:text-base"
                         >
                           <span>{isExpanded ? 'Show Less' : 'Show More Details'}</span>
                           {isExpanded ? (
@@ -241,21 +248,21 @@ export default function ProductsPage() {
 
                       {/* Expanded Content */}
                       {isExpanded && (
-                        <div className="px-6 pb-6 border-t border-gray-100">
+                        <div className="px-4 sm:px-6 pb-4 sm:pb-6 border-t border-gray-100">
                           {/* Full Description */}
-                          <div className="mt-4">
-                            <h4 className="font-semibold text-[#012F73] mb-2">Product Description</h4>
-                            <p className="text-gray-700 text-sm leading-relaxed text-justify">{item.fullDescription}</p>
+                          <div className="mt-3 sm:mt-4">
+                            <h4 className="font-semibold text-[#012F73] mb-2 text-sm sm:text-base">Product Description</h4>
+                            <p className="text-gray-700 text-xs sm:text-sm leading-relaxed text-justify">{item.fullDescription}</p>
                           </div>
 
                           {/* Features */}
-                          <div className="mt-4">
-                            <h4 className="font-semibold text-[#012F73] mb-3">Key Features & Benefits</h4>
+                          <div className="mt-3 sm:mt-4">
+                            <h4 className="font-semibold text-[#012F73] mb-2 sm:mb-3 text-sm sm:text-base">Key Features & Benefits</h4>
                             <div className="grid grid-cols-1 gap-2">
                               {item.features.map((feature, featureIndex) => (
                                 <div key={featureIndex} className="flex items-start space-x-2">
-                                  <div className="w-1.5 h-1.5 bg-red-600 rounded-full mt-2 flex-shrink-0"></div>
-                                  <span className="text-sm text-gray-700">{feature}</span>
+                                  <div className="w-1.5 h-1.5 bg-red-600 rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                                  <span className="text-xs sm:text-sm text-gray-700 leading-relaxed">{feature}</span>
                                 </div>
                               ))}
                             </div>
@@ -263,13 +270,13 @@ export default function ProductsPage() {
 
                           {/* Specifications */}
                           {item.specifications && (
-                            <div className="mt-4">
-                              <h4 className="font-semibold text-[#012F73] mb-3">Technical Specifications</h4>
-                              <div className="flex flex-wrap gap-2">
+                            <div className="mt-3 sm:mt-4">
+                              <h4 className="font-semibold text-[#012F73] mb-2 sm:mb-3 text-sm sm:text-base">Technical Specifications</h4>
+                              <div className="flex flex-wrap gap-1.5 sm:gap-2">
                                 {item.specifications.map((spec, specIndex) => (
                                   <span 
                                     key={specIndex} 
-                                    className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full border border-gray-200"
+                                    className="px-2 sm:px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full border border-gray-200"
                                   >
                                     {spec}
                                   </span>
@@ -286,41 +293,82 @@ export default function ProductsPage() {
             </section>
           ))}
         </div>
+      </main>
 
-        {/* Quality Assurance Section */}
-        <section className="mt-16 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-8 border border-blue-200">
-          <div className="text-center mb-6">
-            <h2 className="text-2xl font-bold text-[#012F73] mb-2">Quality Assurance</h2>
-            <p className="text-gray-700">HPCL's commitment to excellence and purity</p>
+      {/* Enhanced Quality Assurance Section */}
+      <section className="mt-12 sm:mt-16 bg-gradient-to-b from-blue-100 to-blue-100 py-8 sm:py-12 px-4 sm:px-6 border-t border-blue-200">
+        <div className="max-w-6xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-8 sm:mb-12">
+            <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-full shadow-lg mb-4 sm:mb-6">
+              <MdVerifiedUser className="w-6 h-6 sm:w-8 sm:h-8" style={{ color: '#012f73' }} />
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6" style={{ color: '#012f73' }}>
+              Quality Assurance
+            </h2>
+            <div className="w-16 sm:w-24 h-1 bg-gradient-to-r from-red-500 to-blue-600 mx-auto rounded-full mb-4 sm:mb-6"></div>
+            <p className="text-blue-700 text-sm sm:text-base lg:text-lg max-w-3xl mx-auto leading-relaxed px-4">
+              All our products meet the highest industry standards and are backed by HP's commitment to excellence.
+            </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="text-center">
-              <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                <BiSolidGasPump className="w-6 h-6 text-white" />
+          {/* Quality Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
+            {[
+              { 
+                icon: <MdStar className="w-6 h-6 sm:w-8 sm:h-8" />,
+                title: "ISO Certified", 
+                desc: "ISO9001:2000 certified quality management system", 
+                color: "from-red-500 to-blue-600" 
+              },
+              { 
+                icon: <MdVerifiedUser className="w-6 h-6 sm:w-8 sm:h-8" />,
+                title: "HP Authorized", 
+                desc: "Official HP dealer with genuine products", 
+                color: "from-red-500 to-blue-600" 
+              },
+              { 
+                icon: <MdPeople className="w-6 h-6 sm:w-8 sm:h-8" />,
+                title: "Expert Service", 
+                desc: "Professional staff with years of experience", 
+                color: "from-red-500 to-blue-600" 
+              }
+            ].map((item, index) => (
+              <div 
+                key={index} 
+                className="group relative text-center p-6 sm:p-8 bg-white/20 backdrop-blur-sm rounded-2xl border border-white/30 hover:bg-white/30 hover:border-white/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+              >
+                {/* Icon Container */}
+                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-full shadow-lg mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <div style={{ color: '#012f73' }}>{item.icon}</div>
+                </div>
+                
+                {/* Title */}
+                <h3 className={`text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
+                  {item.title}
+                </h3>
+                
+                {/* Description */}
+                <p className="text-blue-700 leading-relaxed text-xs sm:text-sm lg:text-base">
+                  {item.desc}
+                </p>
+                
+                {/* Decorative element */}
+                <div className="absolute top-3 right-3 sm:top-4 sm:right-4 w-2 h-2 bg-gradient-to-r from-red-500 to-blue-600 rounded-full opacity-50"></div>
               </div>
-              <h3 className="font-semibold text-[#012F73] mb-2">Regular Quality Checks</h3>
-              <p className="text-sm text-gray-600">Trained personnel conduct regular quality checks at all outlets</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                <MdOilBarrel className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="font-semibold text-[#012F73] mb-2">Mobile Lab Inspections</h3>
-              <p className="text-sm text-gray-600">Club HP Mobile Labs conduct surprise inspections</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                <MdLocalGasStation className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="font-semibold text-[#012F73] mb-2">Certified Purity</h3>
-              <p className="text-sm text-gray-600">Products are guaranteed free from contamination and adulteration</p>
+            ))}
+          </div>
+          
+          {/* Bottom Accent */}
+          <div className="text-center mt-6 sm:mt-8">
+            <div className="inline-flex items-center space-x-2 text-blue-700">
+              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+              <span className="text-xs sm:text-sm font-medium">Trusted by thousands of customers</span>
+              <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
             </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
       
       <Footer />
     </div>
