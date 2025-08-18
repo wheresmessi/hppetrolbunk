@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Styles */
+* {
+  font-family: Lato, arial, sans-serif;
+  line-height: 1;
+}
+
+body {
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: Lato, arial, sans-serif;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Override line-height for text readability where needed */
+p, .text-content {
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+}
+
+/* Button and interactive elements keep tight line-height */
+button, .btn {
+  line-height: 1;
+}
+
+/* Utility classes for consistent typography */
+.font-lato {
+  font-family: Lato, arial, sans-serif !important;
+}
+
+.line-tight {
+  line-height: 1 !important;
+}
+
+.line-normal {
+  line-height: 1.5 !important;
+}
+
+.line-relaxed {
+  line-height: 1.6 !important;
+}
+
+/* Ensure all Tailwind text utilities use Lato */
+.text-xs, .text-sm, .text-base, .text-lg, .text-xl, 
+.text-2xl, .text-3xl, .text-4xl, .text-5xl, .text-6xl {
+  font-family: Lato, arial, sans-serif;
+}
+
+/* Professional scroll animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Wave animations for about section */
+@keyframes gentleWave {
+  0%, 100% { 
+    transform: translateX(0) translateY(0) scaleY(1);
+  }
+  50% { 
+    transform: translateX(-15px) translateY(-3px) scaleY(1.02);
+  }
+}
+
+@keyframes gentleWave2 {
+  0%, 100% { 
+    transform: translateX(0) translateY(0) scaleY(1);
+  }
+  50% { 
+    transform: translateX(15px) translateY(2px) scaleY(0.98);
+  }
+}
+
+@keyframes gentleWave3 {
+  0%, 100% { 
+    transform: translateX(0) translateY(0) scaleY(1);
+  }
+  50% { 
+    transform: translateX(-10px) translateY(1px) scaleY(1.01);
+  }
+}
+
+/* Animation classes */
+.animate-gentle-wave {
+  animation: gentleWave 8s ease-in-out infinite;
+}
+
+.animate-gentle-wave-2 {
+  animation: gentleWave2 6s ease-in-out infinite;
+}
+
+.animate-gentle-wave-3 {
+  animation: gentleWave3 10s ease-in-out infinite;
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Navigation Active Tab Animation */
+@keyframes slideIn {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+.animate-slideIn {
+  animation: slideIn 0.3s ease-out forwards;
+  transform-origin: left center;
+}
+
+/* Hero Slider Optimizations */
+.hero-slider {
+  will-change: transform;
+}
+
+.hero-slider img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Smooth transitions for better performance */
+.hero-slide-transition {
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Preload optimization */
+.hero-slider-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/hero.PNG');
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+  opacity: 0;
+}
