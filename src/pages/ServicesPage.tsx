@@ -1,5 +1,6 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { useNavigate } from 'react-router-dom';
 
 interface Service {
   id: string;
@@ -13,6 +14,8 @@ interface Service {
 }
 
 export default function ServicesPage() {
+  const navigate = useNavigate();
+
   // General Services
   const generalServices: Service[] = [
     {
@@ -60,7 +63,7 @@ export default function ServicesPage() {
     tagline: 'Your Brand, Our Wall, Maximum Reach',
     description: 'Promote your business on our Education Wall and get noticed by thousands of daily visitors.',
     timing: 'Contact for Details',
-    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+    image: '/ad-wall.jpg',
     color: 'border-red-300',
     highlight: true
   };
@@ -106,27 +109,27 @@ export default function ServicesPage() {
         </div>
 
         {/* Advertisement Section */}
-        <div className="bg-gradient-to-b from-blue-50 to-red-50 py-16">
+        <div className="bg-gradient-to-b from-blue-100 to-red-100 py-24">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-8" style={{ color: '#012F73' }}>Advertisement Space</h2>
-            <div className="max-w-4xl mx-auto bg-white rounded-xl overflow-hidden shadow-lg border-2 border-red-600">
+            <h2 className="text-3xl font-bold text-center mb-12" style={{ color: '#012F73' }}>Advertisement Space</h2>
+            <div className="max-w-5xl mx-auto bg-white rounded-xl overflow-hidden shadow-lg border-2 border-red-600">
               <div className="md:flex">
                 <div className="md:flex-shrink-0 md:w-1/2">
                   <div 
-                    className="h-64 w-full bg-cover bg-center" 
+                    className="h-80 w-full bg-cover bg-center" 
                     style={{ backgroundImage: `url(${advertisement.image})` }}
                   ></div>
                 </div>
-                <div className="p-8 md:w-1/2">
-                  <h3 className="text-2xl font-bold mb-2" style={{ color: '#012F73' }}>{advertisement.title}</h3>
-                  <p className="text-lg text-red-600 mb-4 font-semibold">{advertisement.tagline}</p>
-                  <p className="text-gray-700 mb-6">{advertisement.description}</p>
-                  <div className="flex items-center" style={{ color: '#012F73' }}>
-                    <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-                    </svg>
-                    <span className="font-semibold">{advertisement.timing}</span>
-                  </div>
+                <div className="p-10 md:w-1/2 flex flex-col justify-center">
+                  <h3 className="text-2xl font-bold mb-3" style={{ color: '#012F73' }}>{advertisement.title}</h3>
+                  <p className="text-xl text-red-600 mb-6 font-semibold">{advertisement.tagline}</p>
+                  <p className="text-gray-700 mb-8 text-lg leading-relaxed">{advertisement.description}</p>
+                  <button 
+                    onClick={() => navigate('/contact')}
+                    className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 self-start shadow-lg hover:shadow-xl transform hover:scale-105"
+                  >
+                    Contact Us for Details
+                  </button>
                 </div>
               </div>
             </div>
@@ -134,12 +137,14 @@ export default function ServicesPage() {
         </div>
 
         {/* General Services Section */}
-        <div className="container mx-auto px-4 py-12 bg-white">
-          <h2 className="text-3xl font-bold text-center mb-12" style={{ color: '#012F73' }}>Our Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {generalServices.map((service) => (
-              <ServiceCard key={service.id} service={service} />
-            ))}
+        <div className="bg-gradient-to-b from-red-100 to-white py-12">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-12" style={{ color: '#012F73' }}>Our Services</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {generalServices.map((service) => (
+                <ServiceCard key={service.id} service={service} />
+              ))}
+            </div>
           </div>
         </div>
       </main>
