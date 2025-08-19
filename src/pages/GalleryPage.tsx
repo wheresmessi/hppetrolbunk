@@ -3,78 +3,95 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export default function GalleryPage() {
-  const [activeCategory, setActiveCategory] = useState('facility');
+  const [activeCategory, setActiveCategory] = useState('awards');
 
   const galleryImages = {
-    facility: [
-      { id: 1, title: 'Main Entrance', src: 'https://via.placeholder.com/400x300/1e40af/ffffff?text=Main+Entrance' },
-      { id: 2, title: 'Fuel Dispensers', src: 'https://via.placeholder.com/400x300/dc2626/ffffff?text=Fuel+Dispensers' },
-      { id: 3, title: 'Service Bay', src: 'https://via.placeholder.com/400x300/059669/ffffff?text=Service+Bay' },
-      { id: 4, title: 'Customer Lounge', src: 'https://via.placeholder.com/400x300/7c3aed/ffffff?text=Customer+Lounge' },
-      { id: 5, title: 'Oil Change Area', src: 'https://via.placeholder.com/400x300/ea580c/ffffff?text=Oil+Change+Area' },
-      { id: 6, title: 'Car Wash Station', src: 'https://via.placeholder.com/400x300/0891b2/ffffff?text=Car+Wash+Station' },
-    ],
-    services: [
-      { id: 7, title: 'Professional Oil Change', src: 'https://via.placeholder.com/400x300/dc2626/ffffff?text=Oil+Change+Service' },
-      { id: 8, title: 'Tire Services', src: 'https://via.placeholder.com/400x300/1e40af/ffffff?text=Tire+Services' },
-      { id: 9, title: 'Engine Check', src: 'https://via.placeholder.com/400x300/059669/ffffff?text=Engine+Check' },
-      { id: 10, title: 'Battery Service', src: 'https://via.placeholder.com/400x300/7c3aed/ffffff?text=Battery+Service' },
-      { id: 11, title: 'Vehicle Inspection', src: 'https://via.placeholder.com/400x300/ea580c/ffffff?text=Vehicle+Inspection' },
-      { id: 12, title: 'Complete Car Wash', src: 'https://via.placeholder.com/400x300/0891b2/ffffff?text=Complete+Car+Wash' },
-    ],
-    products: [
-      { id: 13, title: 'HP Premium Petrol', src: 'https://via.placeholder.com/400x300/dc2626/ffffff?text=HP+Premium+Petrol' },
-      { id: 14, title: 'Speed Diesel', src: 'https://via.placeholder.com/400x300/1e40af/ffffff?text=Speed+Diesel' },
-      { id: 15, title: 'Engine Oils Range', src: 'https://via.placeholder.com/400x300/059669/ffffff?text=Engine+Oils' },
-      { id: 16, title: 'Lubricants', src: 'https://via.placeholder.com/400x300/7c3aed/ffffff?text=Lubricants' },
-      { id: 17, title: 'Auto Care Products', src: 'https://via.placeholder.com/400x300/ea580c/ffffff?text=Auto+Care+Products' },
-      { id: 18, title: 'Brake Fluids', src: 'https://via.placeholder.com/400x300/0891b2/ffffff?text=Brake+Fluids' },
-    ],
     awards: [
-      { id: 19, title: 'Best Service Award 2023', src: 'https://via.placeholder.com/400x300/dc2626/ffffff?text=Service+Award+2023' },
-      { id: 20, title: 'Safety Excellence 2022', src: 'https://via.placeholder.com/400x300/1e40af/ffffff?text=Safety+Excellence' },
-      { id: 21, title: 'Customer Choice 2023', src: 'https://via.placeholder.com/400x300/059669/ffffff?text=Customer+Choice' },
-      { id: 22, title: 'Environmental Award 2021', src: 'https://via.placeholder.com/400x300/7c3aed/ffffff?text=Environmental+Award' },
-      { id: 23, title: 'Quality Excellence 2023', src: 'https://via.placeholder.com/400x300/ea580c/ffffff?text=Quality+Excellence' },
-      { id: 24, title: '30 Years of Service', src: 'https://via.placeholder.com/400x300/0891b2/ffffff?text=30+Years+Service' },
+      { id: 1, title: 'Awards & Recognition', src: '/gallery/awards.jpg' },
+      { id: 2, title: 'Achievement Awards', src: '/gallery/awards-2.jpg' },
+    ],
+    events: [
+      { id: 3, title: 'Republic Day Celebration 2018', src: '/gallery/2018-rd-1.jpeg' },
+      { id: 4, title: 'Republic Day Event 2018', src: '/gallery/2018-rd-2.jpeg' },
+      { id: 5, title: 'Republic Day Function 2018', src: '/gallery/2018-rd-3.jpeg' },
+      { id: 6, title: 'Kolu Festival Celebration', src: '/gallery/kolu-1.jpg' },
+      { id: 7, title: 'Kolu Festival Display', src: '/gallery/kolu-2.jpg' },
+      { id: 8, title: 'Kolu Festival Setup', src: '/gallery/kolu-3.jpg' },
+      { id: 9, title: 'Kolu Festival Decorations', src: '/gallery/kolu-4.jpg' },
+      { id: 10, title: 'Kolu Festival Arrangements', src: '/gallery/kolu-5.jpg' },
+      { id: 11, title: 'Kolu Festival Exhibition', src: '/gallery/kolu-6.jpg' },
+      { id: 12, title: 'Kolu Festival Display', src: '/gallery/kolu-7.jpg' },
+      { id: 13, title: 'Jallikattu Protest Support', src: '/gallery/jkp-1.jpeg' },
+      { id: 14, title: 'Jallikattu Protest Rally', src: '/gallery/jkp-2.jpeg' },
+      { id: 15, title: 'Jallikattu Protest Participation', src: '/gallery/jkp-3.jpeg' },
+      { id: 16, title: 'Christmas Celebration', src: '/gallery/xmas-1.jpg' },
+      { id: 17, title: 'Christmas & New Year', src: '/gallery/xmas-2.jpg' },
+      { id: 18, title: 'Christmas Festivities', src: '/gallery/x-mass1.jpg' },
+      { id: 19, title: 'New Year Celebration', src: '/gallery/x-mass2.jpg' },
+      { id: 20, title: 'Christmas Party', src: '/gallery/x-mass3.jpg' },
+      { id: 21, title: 'Xmas Celebration', src: '/gallery/xmass-3.jpg' },
+    ],
+    initiatives: [
+      { id: 22, title: 'Airtel Payment Bank Launch', src: '/gallery/lapb-1.jpeg' },
+      { id: 23, title: 'Payment Bank Services', src: '/gallery/lapb-2.jpeg' },
+      { id: 24, title: 'Digital Banking Launch', src: '/gallery/lapb-3.jpeg' },
+      { id: 25, title: 'Banking Services Introduction', src: '/gallery/lapb-4.jpeg' },
+      { id: 26, title: 'Payment Solutions Launch', src: '/gallery/lapb-5.jpeg' },
+      { id: 27, title: 'Synthetic Oil Launch', src: '/gallery/sol-1.jpg' },
+      { id: 28, title: 'New Oil Products', src: '/gallery/sol-2.jpg' },
+      { id: 29, title: 'Swachh Bharat Abhiyan', src: '/gallery/swaach-1.jpg' },
+      { id: 30, title: 'Cleanliness Drive', src: '/gallery/swaach-2.jpg' },
+      { id: 31, title: 'Clean India Mission', src: '/gallery/swaach-3.jpg' },
+      { id: 32, title: 'Awareness Camp', src: '/gallery/awareness-camp.png' },
+    ],
+    training: [
+      { id: 33, title: 'Training Program Session 1', src: '/gallery/01.jpeg' },
+      { id: 34, title: 'Staff Training Program', src: '/gallery/2.jpg' },
+      { id: 35, title: 'Professional Development', src: '/gallery/3.jpg' },
+      { id: 36, title: 'Skill Enhancement Training', src: '/gallery/4.jpg' },
+      { id: 37, title: 'Team Training Session', src: '/gallery/5.jpg' },
+      { id: 38, title: 'Learning & Development', src: '/gallery/6.jpg' },
+      { id: 39, title: 'Training Workshop', src: '/gallery/9.jpg' },
+      { id: 40, title: 'Ayanavaram Branch', src: '/gallery/ayanavaram-branch.jpg' },
+      { id: 41, title: 'Location Visit', src: '/gallery/LON.jpg' },
     ]
   };
 
   const categories = [
-    { key: 'facility', label: 'Our Facility', count: galleryImages.facility.length },
-    { key: 'services', label: 'Services', count: galleryImages.services.length },
-    { key: 'products', label: 'Products', count: galleryImages.products.length },
     { key: 'awards', label: 'Awards & Recognition', count: galleryImages.awards.length },
+    { key: 'events', label: 'Events & Festivals', count: galleryImages.events.length },
+    { key: 'initiatives', label: 'Initiatives & Launches', count: galleryImages.initiatives.length },
+    { key: 'training', label: 'Training & Development', count: galleryImages.training.length },
   ];
 
   return (
-    <div className="min-h-screen bg-blue-50">
+    <div className="min-h-screen bg-white">
       <Header />
       
       {/* Gallery Hero Section */}
-      <section className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-16 sm:py-20 lg:py-28 px-6">
+      <section className="bg-gradient-to-r from-[#012F73] to-blue-600 text-white py-16 sm:py-20 lg:py-28 px-6">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl font-bold mb-4">Gallery</h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Take a visual tour of our modern facility, comprehensive services, quality products, 
-            and the recognition we've earned over three decades of dedicated service.
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Gallery</h1>
+          <p className="text-lg sm:text-xl lg:text-2xl text-blue-100 max-w-3xl mx-auto">
+            Take a visual tour of our awards, events, initiatives, and training programs 
+            spanning over three decades of dedicated service.
           </p>
         </div>
       </section>
 
       {/* Gallery Filter Tabs */}
-      <section className="py-8 px-6 bg-white border-b">
+      <section className="py-8 px-6 bg-gray-50 border-b">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category) => (
               <button
                 key={category.key}
                 onClick={() => setActiveCategory(category.key)}
-                className={`px-6 py-3 rounded-full font-medium text-sm uppercase tracking-wider transition-all duration-200 ${
+                className={`px-6 py-3 rounded-lg font-semibold text-sm uppercase tracking-wider transition-all duration-200 ${
                   activeCategory === category.key
-                    ? 'bg-blue-600 text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
+                    ? 'bg-[#012F73] text-white shadow-lg transform scale-105'
+                    : 'bg-white text-[#012F73] hover:bg-blue-50 border-2 border-[#012F73] hover:scale-105'
+                } transition-transform`}
               >
                 {category.label} ({category.count})
               </button>
@@ -84,13 +101,13 @@ export default function GalleryPage() {
       </section>
 
       {/* Gallery Grid */}
-      <section className="py-16 px-6">
+      <section className="py-16 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {galleryImages[activeCategory as keyof typeof galleryImages].map((image) => (
               <div 
                 key={image.id}
-                className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 bg-white"
+                className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 bg-white border border-gray-200"
               >
                 <div className="aspect-w-4 aspect-h-3 overflow-hidden">
                   <img 
@@ -99,15 +116,10 @@ export default function GalleryPage() {
                     className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-end">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#012F73] to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300 flex items-end">
                   <div className="p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
                     <h3 className="text-lg font-semibold">{image.title}</h3>
                   </div>
-                </div>
-                <div className="p-4">
-                  <h3 className="text-sm font-medium text-gray-800 group-hover:text-blue-600 transition-colors duration-200">
-                    {image.title}
-                  </h3>
                 </div>
               </div>
             ))}
@@ -116,17 +128,17 @@ export default function GalleryPage() {
       </section>
 
       {/* Visit Us CTA */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-12 px-6">
+      <section className="bg-gradient-to-r from-[#012F73] to-blue-700 text-white py-12 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Visit Our Facility</h2>
           <p className="text-blue-100 mb-8">
             Experience our services firsthand. We're open 24/7 to serve you better.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+            <button className="bg-white text-[#012F73] font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors duration-200">
               Get Directions
             </button>
-            <button className="border-2 border-white text-white font-semibold py-3 px-8 rounded-lg hover:bg-white hover:text-blue-600 transition-colors duration-200">
+            <button className="border-2 border-white text-white font-semibold py-3 px-8 rounded-lg hover:bg-white hover:text-[#012F73] transition-colors duration-200">
               Contact Us
             </button>
           </div>

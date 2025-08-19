@@ -36,7 +36,6 @@ const awards = [
 ];
 
 export default function HomePage() {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [heroSlideIndex, setHeroSlideIndex] = useState(0);
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
 
@@ -77,15 +76,6 @@ export default function HomePage() {
     return () => clearInterval(heroTimer);
   }, [heroSlides.length]);
 
-  // Auto-advance awards slides every 3 seconds
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % awards.length);
-    }, 3000);
-
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -119,7 +109,7 @@ export default function HomePage() {
                 className={`w-2 h-2 sm:w-4 sm:h-4 rounded-full transition-all duration-300 ${
                   index === heroSlideIndex 
                     ? 'bg-red-600 scale-125' 
-                    : 'bg-white/60 hover:bg-red-400'
+                    : 'bg-red-200 hover:bg-red-500'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -128,6 +118,46 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Wave Design Transition */}
+      <div className="relative w-full bg-blue-200">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-12 sm:h-16 lg:h-20 transform rotate-180">
+          <path d="M0,0 C150,60 350,0 600,30 C850,60 1050,0 1200,30 L1200,120 L0,120 Z" fill="#224bd2ff" opacity="0.8" />
+          <path d="M0,20 C150,80 350,20 600,50 C850,80 1050,20 1200,50 L1200,120 L0,120 Z" fill="#1d4ed8" opacity="0.6" />
+          <path d="M0,40 C150,100 350,40 600,70 C850,100 1050,40 1200,70 L1200,120 L0,120 Z" fill="#012F73" opacity="0.7" />
+        </svg>
+      </div>
+
+      {/* Gallery Stats */}
+      <section className="bg-gradient-to-b from-blue-200 via-red-200 to-white py-16 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-blue-900 mb-4">Our Journey in Numbers</h2>
+            <p className="text-gray-700 text-lg">Three decades of excellence and service</p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="p-6">
+              <div className="text-4xl font-bold text-blue-600 mb-2">30+</div>
+              <div className="text-gray-600 font-medium">Years of Service</div>
+            </div>
+            
+            <div className="p-6">
+              <div className="text-4xl font-bold text-blue-600 mb-2">10,000+</div>
+              <div className="text-gray-600 font-medium">KL Annual Turnover</div>
+            </div>
+            
+            <div className="p-6">
+              <div className="text-4xl font-bold text-blue-600 mb-2">50,00,000+</div>
+              <div className="text-gray-600 font-medium">Happy Customers</div>
+            </div>
+            
+            <div className="p-6">
+              <div className="text-4xl font-bold text-blue-600 mb-2">24/7</div>
+              <div className="text-gray-600 font-medium">Service Hours</div>
+            </div>
+          </div>
+        </div>
+      </section>
       
 
       {/* About + Junior Legal Expert + Elizabeth Section */}
@@ -136,18 +166,10 @@ export default function HomePage() {
         <section 
           id="about" 
           data-animate="true"
-          className={`py-12 sm:py-16   sm:px-6 relative overflow-hidden flex items-center transition-all duration-1000 ease-out ${
+          className={`py-12 sm:py-16 sm:px-6 relative overflow-hidden flex items-center transition-all duration-1000 ease-out ${
             visibleSections.has('about') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          {/* Wave Design */}
-          <div className="absolute top-0 left-0 w-full">
-            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-12 sm:h-16 lg:h-20 transform rotate-180">
-              <path d="M0,0 C150,60 350,0 600,30 C850,60 1050,0 1200,30 L1200,120 L0,120 Z" fill="#1e40af" opacity="0.8" />
-              <path d="M0,20 C150,80 350,20 600,50 C850,80 1050,20 1200,50 L1200,120 L0,120 Z" fill="#1d4ed8" opacity="0.6" />
-              <path d="M0,40 C150,100 350,40 600,70 C850,100 1050,40 1200,70 L1200,120 L0,120 Z" fill="#012F73" opacity="0.4" />
-            </svg>
-          </div>
 
           <div className="w-full max-w-5xl py-6 mx-auto relative text-center lg:text-center transition-all duration-700 delay-200 ease-out">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl mb-2 font-bold leading-tight text-[#012F73]">Fueling Trust</h2>
@@ -169,8 +191,8 @@ export default function HomePage() {
   <div className="w-full max-w-4xl">
     
     {/* Mobile View (stacked card) */}
-    <div className="relative bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg shadow-lg p-6 flex flex-col items-center md:hidden h-[525px] border border-blue-200">
-      <h2 className="text-xl font-bold text-[#012F73] mb-3 underline decoration-red-600 decoration-2 underline-offset-4">
+    <div className="relative bg-blue-200 rounded-lg shadow-lg p-6 flex flex-col items-center md:hidden h-[525px]">
+      <h2 className="text-xl font-bold text-black mb-3 underline decoration-red-200 decoration-2 underline-offset-4">
   Mr. J. Antony
 </h2>
 
@@ -192,11 +214,11 @@ export default function HomePage() {
     {/* Desktop / Tablet View (absolute positioning) */}
     <div className="hidden md:block relative w-full max-w-4xl h-80">
       {/* Blue Box Background */}
-      <div className="absolute inset-0 top-16 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg shadow-lg border border-blue-200"></div>
+      <div className="absolute inset-0 top-16 bg-blue-200 rounded-lg shadow-lg"></div>
       
       {/* Content Box */}
-      <div className="absolute left-0 top-16 w-3/4 h-64 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-8 flex flex-col justify-center z-10">
-        <h2 className="text-xl font-bold text-[#012F73] mb-3 underline decoration-red-600 decoration-2 underline-offset-4">
+      <div className="absolute left-0 top-16 w-3/4 h-64 bg-blue-200 rounded-lg p-8 flex flex-col justify-center z-10">
+        <h2 className="text-xl font-bold text-black mb-3 underline decoration-red-200 decoration-2 underline-offset-4">
   Mr. J. Antony
 </h2>
 <p className="text-gray-700 mb-6">
@@ -256,12 +278,12 @@ export default function HomePage() {
           <div className="max-w-full mx-auto">
             {/* Mobile Layout */}
             <div className="lg:hidden">
-              <div className="mx-4 mb-6 bg-gradient-to-br from-red-50 to-red-100 rounded-xl shadow-lg p-6 sm:p-8 border border-red-200">
-                <h3 className="text-xl sm:text-2xl font-bold text-[#012F73] mb-4 border-b-4 border-red-600 pb-2 inline-block">Mrs. A. Elizabeth</h3>
-                <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-4">
+              <div className="mx-4 mb-6 bg-blue-200 rounded-xl shadow-lg p-6 sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-bold text-black mb-4 border-b-4 border-red-200 pb-2 inline-block">Mrs. A. Elizabeth</h3>
+                <p className="text-black text-sm sm:text-base leading-relaxed mb-4">
                   Following Mr. Antony's passing, leadership transitioned to Mrs. A. Elizabeth, an MBA graduate with a vision for innovation and growth. Under her stewardship, the business reached new heights:
                 </p>
-                <ul className="space-y-2 text-gray-700 text-sm sm:text-base">
+                <ul className="space-y-2 text-black text-sm sm:text-base">
                   <li><strong>2019 –</strong> Highest sales in South India</li>
                   <li><strong>2020 –</strong> Highest lube sales and best performance in HP Pay</li>
                   <li><strong>2021 –</strong> Recognition for presentation at Yeskaud</li>
@@ -269,7 +291,7 @@ export default function HomePage() {
                 </ul>
               </div>
               <div className="relative mx-4 h-80 mb-6">
-                <div className="absolute inset-x-0 top-16 h-64 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl shadow-lg border border-blue-200"></div>
+                <div className="absolute inset-x-0 top-16 h-64 bg-red-200 rounded-xl shadow-lg"></div>
                 <div className="absolute inset-x-0 bottom-0 h-80 z-10">
                   <img src="/elizabeth.png" alt="Elizabeth" className="w-full h-full object-contain" />
                 </div>
@@ -278,16 +300,16 @@ export default function HomePage() {
 
             {/* Desktop Layout */}
             <div className="hidden lg:block relative h-96">
-              <div className="absolute left-0 top-16 w-2/4 h-80 bg-gradient-to-br from-blue-50 to-blue-100 rounded-r-xl shadow-lg border border-blue-200"></div>
+              <div className="absolute left-0 top-16 w-2/4 h-80 bg-red-200 rounded-r-xl shadow-lg"></div>
               <div className="absolute left-0 top-0 w-2/4 h-full z-5">
                 <img src="/elizabeth.png" alt="Elizabeth" className="w-full h-full object-contain rounded-r-xl" />
               </div>
-              <div className="absolute right-0 top-0 w-2/3 h-80 bg-gradient-to-br from-red-50 to-red-100 rounded-l-xl shadow-lg p-6 sm:p-8 flex flex-col justify-center border border-red-200">
-                <h3 className="text-xl sm:text-2xl font-bold text-[#012F73] mb-4 border-b-4 border-red-600 pb-2 inline-block w-48">Mrs. A. Elizabeth</h3>
-                <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-4">
+              <div className="absolute right-0 top-0 w-2/3 h-80 bg-blue-200 rounded-l-xl shadow-lg p-6 sm:p-8 flex flex-col justify-center">
+                <h3 className="text-xl sm:text-2xl font-bold text-black mb-4 border-b-4 border-red-200 pb-2 inline-block">Mrs. A. Elizabeth</h3>
+                <p className="text-black text-sm sm:text-base leading-relaxed mb-4">
                   Following Mr. Antony's passing, leadership transitioned to Mrs. A. Elizabeth, an MBA graduate with a vision for innovation and growth. Under her stewardship, the business reached new heights:
                 </p>
-                <ul className="space-y-2 text-gray-700 text-sm sm:text-base">
+                <ul className="space-y-2 text-black text-sm sm:text-base">
                   <li><strong>2019 –</strong> Highest sales in South India</li>
                   <li><strong>2020 –</strong> Highest lube sales and best performance in HP Pay</li>
                   <li><strong>2021 –</strong> Recognition for presentation at Yeskaud</li>
@@ -369,7 +391,7 @@ export default function HomePage() {
             <div className={`space-y-4 sm:space-y-6 transition-all duration-700 delay-400 ease-out ${
               visibleSections.has('hpcl') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
             }`}>
-              <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-4 sm:p-6 rounded-lg border border-blue-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+              <div className="bg-gradient-to-r from-transparent to-blue-300/70 p-4 sm:p-6 rounded-lg border border-blue-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <h3 className="font-semibold mb-3 text-sm sm:text-base" style={{ color: '#012F73' }}>Registered Office and Corporate Headquarters</h3>
                 <p className="text-gray-700 text-xs sm:text-sm leading-relaxed">
                   17, Jamshedji Tata Road,<br />
@@ -379,7 +401,7 @@ export default function HomePage() {
                 </p>
               </div>
               
-              <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-4 sm:p-6 rounded-lg border border-blue-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 delay-100">
+              <div className="bg-gradient-to-r from-transparent to-blue-300/70 p-4 sm:p-6 rounded-lg border border-blue-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 delay-100">
                 <h3 className="font-semibold mb-3 text-sm sm:text-base" style={{ color: '#012F73' }}>Marketing Headquarters</h3>
                 <p className="text-gray-700 text-xs sm:text-sm leading-relaxed">
                   Petroleum House,<br />
@@ -389,7 +411,7 @@ export default function HomePage() {
                 </p>
               </div>
               
-              <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-4 sm:p-6 rounded-lg border border-blue-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 delay-200">
+              <div className="bg-gradient-to-r from-transparent to-blue-300/70 p-4 sm:p-6 rounded-lg border border-blue-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 delay-200">
                 <h3 className="font-semibold mb-3 text-sm sm:text-base" style={{ color: '#012F73' }}>Regional Office</h3>
                 <p className="text-gray-700 text-xs sm:text-sm leading-relaxed">
                   No. 1, Gandhi Irwin Road,<br />
@@ -402,70 +424,67 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-{/* Awards Carousel */}
-      <section className="bg-white w-full my-4 sm:my-8 text-center px-4">
-        <h2 className="text-lg sm:text-xl mb-4 sm:mb-5 font-semibold" style={{ color: '#012F73' }}>Awards & Recognition</h2>
-        <div className="w-full overflow-hidden relative min-h-24 sm:min-h-30 flex items-center px-2 sm:px-4">
-          <div 
-            className="flex w-full transition-transform duration-700 ease-in-out"
-            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-          >
-            {awards.map((award) => (
-              <div
-                key={award.id}
-                className="min-w-full flex-shrink-0 py-4 sm:py-6 px-2 sm:px-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 transition-all duration-300"
-              >
-                <div className="w-12 h-12 sm:w-15 sm:h-15 flex items-center justify-center">
-                  <img
-                    src={award.logo}
-                    alt={`${award.title} logo`}
-                    className="w-12 h-12 sm:w-15 sm:h-15 object-contain rounded-full shadow-md"
-                  />
+      
+      {/* Awards Carousel - Continuous Scrolling */}
+      <section className="py-6 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-xl sm:text-2xl font-bold text-center mb-6" style={{ color: '#012F73' }}>
+            Awards & Recognition
+          </h2>
+          <div className="relative overflow-hidden">
+            <div className="flex animate-scroll space-x-8 sm:space-x-12">
+              {/* First set of awards */}
+              {awards.map((award) => (
+                <div
+                  key={`first-${award.id}`}
+                  className="flex-shrink-0 flex items-center space-x-4 rounded-lg px-6 py-4 transition-all duration-300 filter sepia-[0.3] hue-rotate-[200deg] saturate-[0.8] brightness-[0.9] hover:filter-none"
+                  style={{ minWidth: '280px' }}
+                >
+                  <div className="w-12 h-12 flex items-center justify-center">
+                    <img
+                      src={award.logo}
+                      alt={`${award.title} logo`}
+                      className="w-12 h-12 object-contain rounded-full"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-sm sm:text-base font-bold mb-1" style={{ color: '#012F73' }}>
+                      {award.title}
+                    </h3>
+                    <p className="text-gray-600 text-xs sm:text-sm">{award.year}</p>
+                  </div>
                 </div>
-                <div className="text-center sm:text-left">
-                  <h3 className="text-sm sm:text-lg font-bold mb-1" style={{ color: '#012F73' }}>{award.title}</h3>
-                  <p className="text-gray-600 text-xs sm:text-sm">{award.year}</p>
+              ))}
+              {/* Duplicate set for seamless loop */}
+              {awards.map((award) => (
+                <div
+                  key={`second-${award.id}`}
+                  className="flex-shrink-0 flex items-center space-x-4 rounded-lg px-6 py-4 transition-all duration-300 filter sepia-[0.3] hue-rotate-[200deg] saturate-[0.8] brightness-[0.9] hover:filter-none"
+                  style={{ minWidth: '280px' }}
+                >
+                  <div className="w-12 h-12 flex items-center justify-center">
+                    <img
+                      src={award.logo}
+                      alt={`${award.title} logo`}
+                      className="w-12 h-12 object-contain rounded-full"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-sm sm:text-base font-bold mb-1" style={{ color: '#012F73' }}>
+                      {award.title}
+                    </h3>
+                    <p className="text-gray-600 text-xs sm:text-sm">{award.year}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Gallery Stats */}
-      <section className="bg-gradient-to-b from-white to-red-200 py-16 px-6 border-t">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-blue-900 mb-4">Our Journey in Numbers</h2>
-            <p className="text-gray-700 text-lg">Three decades of excellence and service</p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="p-6">
-              <div className="text-4xl font-bold text-blue-600 mb-2">30+</div>
-              <div className="text-gray-600 font-medium">Years of Service</div>
-            </div>
-            
-            <div className="p-6">
-              <div className="text-4xl font-bold text-blue-600 mb-2">10,000+</div>
-              <div className="text-gray-600 font-medium">KL Annual Turnover</div>
-            </div>
-            
-            <div className="p-6">
-              <div className="text-4xl font-bold text-blue-600 mb-2">50,000+</div>
-              <div className="text-gray-600 font-medium">Happy Customers</div>
-            </div>
-            
-            <div className="p-6">
-              <div className="text-4xl font-bold text-blue-600 mb-2">24/7</div>
-              <div className="text-gray-600 font-medium">Service Hours</div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Contact Section */}
-      <section id="contact" className="bg-gradient-to-b from-red-200 via-blue-200 to-blue-200 py-6 sm:py-8 px-4 sm:px-6 text-left">
+      <section id="contact" className="bg-blue-200 py-6 sm:py-8 px-4 sm:px-6 text-left">
         <div className="max-w-6xl mx-auto">
           <h3 className="mb-4 text-lg sm:text-xl font-semibold text-center lg:text-left" style={{ color: '#012F73' }}>Contact Information</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">

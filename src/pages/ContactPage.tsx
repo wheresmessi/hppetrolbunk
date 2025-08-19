@@ -40,7 +40,7 @@ export default function ContactPage() {
       <Header />
       
       {/* Contact Hero Section */}
-      <section className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-16 sm:py-20 lg:py-28 px-6">
+      <section className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-16 px-6">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-5xl font-bold mb-4">Contact Us</h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
@@ -68,10 +68,10 @@ export default function ContactPage() {
                     <div>
                       <h3 className="text-xl font-semibold text-blue-800 mb-2">Visit Our Station</h3>
                       <p className="text-gray-700">
-                        E/100, 3rd Avenue<br />
-                        Anna Nagar<br />
+                        No E, 1, Anna Nagar 3rd Main Rd,<br />
+                        Block E, Annanagar East,<br />
                         Chennai, Tamil Nadu<br />
-                        Pin - 600 102
+                        Pin - 600102
                       </p>
                     </div>
                   </div>
@@ -85,9 +85,8 @@ export default function ContactPage() {
                     <div>
                       <h3 className="text-xl font-semibold text-blue-800 mb-2">Call Us</h3>
                       <p className="text-gray-700">
-                        Phone: +91-44-2618-XXXX<br />
-                        Mobile: +91-98XXX-XXXXX<br />
-                        Emergency: +91-90XXX-XXXXX
+                        9940277977<br />
+                        9840843943
                       </p>
                     </div>
                   </div>
@@ -99,11 +98,10 @@ export default function ContactPage() {
                       <EnvelopeIcon className="w-6 h-6 text-green-600" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-blue-800 mb-2">Email & Online</h3>
+                      <h3 className="text-xl font-semibold text-blue-800 mb-2">Email Us</h3>
                       <p className="text-gray-700">
-                        Email: info@annanagar-hp.com<br />
-                        Business: business@annanagar-hp.com<br />
-                        Support: support@annanagar-hp.com
+                        talk2eliz81@yahoo.in<br />
+                        antonyj4343@yahoo.com
                       </p>
                     </div>
                   </div>
@@ -117,10 +115,9 @@ export default function ContactPage() {
                     <div>
                       <h3 className="text-xl font-semibold text-blue-800 mb-2">Operating Hours</h3>
                       <p className="text-gray-700">
-                        <strong>24/7 Service Available</strong><br />
-                        Fuel Station: Open 24 hours<br />
-                        Services: 6:00 AM - 10:00 PM<br />
-                        Office: 9:00 AM - 6:00 PM
+                        <strong>Fuel Station:</strong> 24/7<br />
+                        <strong>Services:</strong> 4:00 AM - 12:00 PM<br />
+                        <strong>Office:</strong> 9:00 AM - 7:00 PM
                       </p>
                     </div>
                   </div>
