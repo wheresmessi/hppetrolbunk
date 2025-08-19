@@ -88,6 +88,17 @@ export default function Header() {
           </Link>
           
           <Link 
+            to="/services" 
+            className="no-underline py-2 sm:py-3 px-2 sm:px-4 lg:px-5 text-xs sm:text-sm lg:text-base font-bold uppercase tracking-wider transition-all duration-300 relative whitespace-nowrap"
+            style={{ color: '#012F73' }}
+          >
+            SERVICES
+            {location.pathname === '/services' && (
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-red-600 animate-slideIn"></div>
+            )}
+          </Link>
+          
+          <Link 
             to="/gallery" 
             className="no-underline py-2 sm:py-3 px-2 sm:px-4 lg:px-5 text-xs sm:text-sm lg:text-base font-bold uppercase tracking-wider transition-all duration-300 relative whitespace-nowrap"
             style={{ color: '#012F73' }}
