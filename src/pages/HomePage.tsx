@@ -87,7 +87,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <Header />
 
       {/* Hero Section with Slider */}
@@ -297,6 +297,32 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+      </section>
+
+      {/* Company Growth and Performance */}
+      <section className="w-full px-4 sm:px-6 py-12 md:py-16 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="space-y-8">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-2">
+                Our <span className="text-red-600">Growth</span> Journey
+              </h2>
+              <div className="w-24 h-1 bg-red-500 mx-auto rounded-full"></div>
+            </div>
+            <div className="space-y-6 text-gray-700 leading-relaxed">
+              <p className="text-justify text-base sm:text-lg lg:text-lg max-w-5xl mx-auto">
+                Today, <span className="font-bold text-red-600">Annanagar Auto Service</span> maintains a monthly turnover of <span className="font-semibold">800KL</span> and an annual
+                turnover nearing <span className="font-semibold">10,000KL</span>. A tightly knit, vertically structured team ensures smooth day-
+                to-day operations and a consistent focus on service excellence.
+              </p>
+              <p className="text-justify text-base sm:text-lg lg:text-lg max-w-5xl mx-auto">
+                With a strong foundation built on tradition and an eye toward the future, <span className="font-bold text-red-600">Annanagar Auto
+                Service</span> remains committed to innovation, sustainability, and delivering the highest
+                standards of customer satisfaction in the automotive service industry.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* HPCL Section */}
