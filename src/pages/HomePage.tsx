@@ -432,7 +432,7 @@ export default function HomePage() {
             Awards & Recognition
           </h2>
           <div className="relative overflow-hidden">
-            <div className="flex animate-scroll space-x-8 sm:space-x-12">
+            <div className="flex animate-scroll space-x-8 sm:space-x-12" style={{ width: 'max-content' }}>
               {/* First set of awards */}
               {awards.map((award) => (
                 <div
@@ -455,7 +455,7 @@ export default function HomePage() {
                   </div>
                 </div>
               ))}
-              {/* Duplicate set for seamless loop */}
+              {/* Exact duplicate set for seamless loop */}
               {awards.map((award) => (
                 <div
                   key={`second-${award.id}`}

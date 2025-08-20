@@ -24,7 +24,7 @@ export default function ServicesPage() {
       tagline: 'Stay Compliant. Drive with Confidence',
       description: 'Quick and certified emission testing for bikes, cars, autos, and trucks – all under one roof.',
       timing: '10:30 AM - 4:30 PM',
-      image: 'https://images.unsplash.com/photo-1631549916768-41152fbb3e84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+      image: '/pollution-testing.png',
       color: 'border-blue-200'
     },
     {
@@ -33,7 +33,7 @@ export default function ServicesPage() {
       tagline: 'Insurance Made Easy, Instantly',
       description: 'With our partner Jubilant Insurance Broking Services Pvt. Ltd., get instant policies for two-wheelers, cars, autos, and trucks.',
       timing: '9:30 AM - 7:30 PM',
-      image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+      image: '/insurance.png',
       color: 'border-red-200'
     },
     {
@@ -42,7 +42,7 @@ export default function ServicesPage() {
       tagline: 'Fresh Oil. Smooth Ride. Free in 20 Minutes',
       description: 'Get your two-wheeler\'s oil changed absolutely free with genuine HP oil (outside oil not accepted)',
       timing: '6:00 AM - 12:00 PM',
-      image: 'https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1388&q=80',
+      image: '/free-oil.jpg',
       color: 'border-red-200'
     },
     {
@@ -51,7 +51,7 @@ export default function ServicesPage() {
       tagline: 'See the Road Clearly, Every Time',
       description: 'Enjoy a complimentary windshield cleaning for all cars – safe, clear, and streak-free.',
       timing: 'All Day',
-      image: 'https://images.unsplash.com/photo-1597938430467-e7df881d7b0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80',
+      image: '/car-wash.png',
       color: 'border-blue-200'
     }
   ];

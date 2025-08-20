@@ -70,8 +70,7 @@ export default function ContactPage() {
                       <p className="text-gray-700">
                         No E, 1, Anna Nagar 3rd Main Rd,<br />
                         Block E, Annanagar East,<br />
-                        Chennai, Tamil Nadu<br />
-                        Pin - 600102
+                        Chennai, Tamil Nadu 600102
                       </p>
                     </div>
                   </div>
@@ -237,19 +236,19 @@ export default function ContactPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-blue-900 mb-2">Find Us on Map</h2>
-            <p className="text-gray-700 text-lg">E/100, 3rd Avenue, Anna Nagar, Chennai - 600 102</p>
           </div>
           
           <div className="bg-white rounded-xl shadow-xl overflow-hidden border-2 border-blue-100">
             <div className="h-[500px] w-full">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.347393178132!2d80.2117!3d13.0827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDA0JzU3LjgiTiA4MMKwMTInNDIuMSJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1264.2815523680388!2d80.21709518639459!3d13.088327247362093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526425ad048771%3A0xfaad3e18d41cce51!2sHindustan%20Petroleum%20Corporation%20Limited!5e0!3m2!1sen!2sin!4v1755667686687!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
-                title="Location Map"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Hindustan Petroleum Corporation Limited - Annanagar Auto Service"
                 className="w-full h-full"
               ></iframe>
             </div>
