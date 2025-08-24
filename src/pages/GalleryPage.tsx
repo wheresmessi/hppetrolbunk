@@ -69,15 +69,22 @@ export default function GalleryPage() {
       <Header />
       
       {/* Gallery Hero Section */}
-      <section className="bg-gradient-to-r from-[#012F73] to-blue-600 text-white py-16 sm:py-20 lg:py-28 px-6">
-        <div className="max-w-6xl mx-auto text-center">
+      <div className="relative bg-gradient-to-r from-[#012F73] to-blue-600 text-white py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          style={{ backgroundImage: "url('/gallery.png')" }}
+        ></div>
+        
+        {/* Content */}
+        <div className="relative max-w-7xl mx-auto text-center">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Gallery</h1>
-          <p className="text-lg sm:text-xl lg:text-2xl text-blue-100 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-blue-100 max-w-3xl mx-auto px-4">
             Take a visual tour of our awards, events, initiatives, and training programs 
             spanning over three decades of dedicated service.
           </p>
         </div>
-      </section>
+      </div>
 
       {/* Gallery Filter Tabs */}
       <section className="py-8 px-6 bg-gray-50 border-b">

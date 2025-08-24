@@ -161,19 +161,19 @@ export default function HomePage() {
       
 
       {/* About + Junior Legal Expert + Elizabeth Section */}
-      <section className="flex flex-col gap-12 w-full max-w-[1800px] mx-auto">
+      <section className="flex flex-col gap-8 w-full max-w-[1800px] mx-auto">
         {/* About Us Section */}
         <section 
           id="about" 
           data-animate="true"
-          className={`py-12 sm:py-16 sm:px-6 relative overflow-hidden flex items-center transition-all duration-1000 ease-out ${
+          className={`py-8 sm:py-12 sm:px-6 relative overflow-hidden flex items-center transition-all duration-1000 ease-out ${
             visibleSections.has('about') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
 
-          <div className="w-full max-w-5xl py-6 mx-auto relative text-center lg:text-center transition-all duration-700 delay-200 ease-out">
+          <div className="w-full max-w-5xl py-4 mx-auto relative text-center lg:text-center transition-all duration-700 delay-200 ease-out">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl mb-2 font-bold leading-tight text-[#012F73]">Fueling Trust</h2>
-            <div className="flex flex-col gap-1 text-xl sm:text-2xl lg:text-3xl text-gray-700 leading-relaxed mb-8">
+            <div className="flex flex-col gap-1 text-xl sm:text-2xl lg:text-3xl text-gray-700 leading-relaxed mb-6">
               <span>in the Heart of <span className="text-red-600 font-extrabold text-2xl sm:text-3xl lg:text-4xl uppercase tracking-wide">Anna Nagar</span></span>
             </div>
           </div>
@@ -246,9 +246,9 @@ export default function HomePage() {
 
 
         {/* Company Philosophy and Legacy Section */}
-        <section className="w-full px-4 sm:px-6 py-12 md:py-16">
+        <section className="w-full px-4 sm:px-6 py-8 md:py-10">
           <div className="max-w-5xl mx-auto">
-            <div className="space-y-6 text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-gray-700 leading-relaxed">
               <p className="text-justify text-base sm:text-lg lg:text-lg max-w-5xl mx-auto">
                 From the beginning, the philosophy was clear: 100% customer satisfaction. Guided by 
                 the motto "We serve to grow, and we grow to serve," the outlet quickly earned a 
@@ -278,22 +278,24 @@ export default function HomePage() {
           <div className="max-w-full mx-auto">
             {/* Mobile Layout */}
             <div className="lg:hidden">
-              <div className="mx-4 mb-6 bg-blue-200 rounded-xl shadow-lg p-6 sm:p-8">
-                <h3 className="text-xl sm:text-2xl font-bold text-black mb-4 border-b-4 border-red-200 pb-2 inline-block">Mrs. A. Elizabeth</h3>
-                <p className="text-black text-sm sm:text-base leading-relaxed mb-4">
-                  Following Mr. Antony's passing, leadership transitioned to Mrs. A. Elizabeth, an MBA graduate with a vision for innovation and growth. Under her stewardship, the business reached new heights:
-                </p>
-                <ul className="space-y-2 text-black text-sm sm:text-base">
-                  <li><strong>2019 –</strong> Highest sales in South India</li>
-                  <li><strong>2020 –</strong> Highest lube sales and best performance in HP Pay</li>
-                  <li><strong>2021 –</strong> Recognition for presentation at Yeskaud</li>
-                  <li><strong>2022 –</strong> Best Women Dealer Award (Nov 29)</li>
-                </ul>
-              </div>
-              <div className="relative mx-4 h-80 mb-6">
-                <div className="absolute inset-x-0 top-16 h-64 bg-red-200 rounded-xl shadow-lg"></div>
-                <div className="absolute inset-x-0 bottom-0 h-80 z-10">
-                  <img src="/elizabeth.png" alt="Elizabeth" className="w-full h-full object-contain" />
+              <div className="mx-4 mb-6 bg-red-200 rounded-xl shadow-lg p-6 sm:p-8 flex flex-col h-[32rem] overflow-hidden">
+                {/* Title and Content - 50% */}
+                <div className="flex-1 flex flex-col justify-center">
+                   <h2 className="text-xl font-bold text-black mb-3 underline decoration-blue-200 decoration-2 underline-offset-4">
+  Mrs. A. Elizabeth</h2>
+                  <p className="text-black text-sm sm:text-base leading-relaxed mb-4">
+                    Following Mr. Antony's passing, leadership transitioned to Mrs. A. Elizabeth, an MBA graduate with a vision for innovation and growth. Under her stewardship, the business reached new heights:
+                  </p>
+                  <ul className="space-y-1 text-black text-xs sm:text-sm">
+                    <li><strong>2019 –</strong> Highest sales in South India</li>
+                    <li><strong>2020 –</strong> Highest lube sales and best performance in HP Pay</li>
+                    <li><strong>2021 –</strong> Recognition for presentation at Yeskaud</li>
+                    <li><strong>2022 –</strong> Best Women Dealer Award (Nov 29)</li>
+                  </ul>
+                </div>
+                {/* Image - 50% */}
+                <div className="flex-1 flex items-center justify-center p-2">
+                  <img src="/elizabeth.png" alt="Elizabeth" className="max-w-full max-h-full object-contain" />
                 </div>
               </div>
             </div>
@@ -322,21 +324,27 @@ export default function HomePage() {
       </section>
 
       {/* Company Growth and Performance */}
-      <section className="w-full px-4 sm:px-6 py-12 md:py-16 bg-white">
-        <div className="max-w-5xl mx-auto">
-          <div className="space-y-8">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-2">
-                Our <span className="text-red-600">Growth</span> Journey
-              </h2>
-              <div className="w-24 h-1 bg-red-500 mx-auto rounded-full"></div>
-            </div>
-            <div className="space-y-6 text-gray-700 leading-relaxed">
-              <p className="text-justify text-base sm:text-lg lg:text-lg max-w-5xl mx-auto">
-                Today, <span className="font-bold text-red-600">Annanagar Auto Service</span> maintains a monthly turnover of <span className="font-semibold">800KL</span> and an annual
-                turnover nearing <span className="font-semibold">10,000KL</span>. A tightly knit, vertically structured team ensures smooth day-
-                to-day operations and a consistent focus on service excellence.
-              </p>
+      <section className="flex flex-col gap-8 w-full max-w-[1800px] mx-auto">
+        {/* Growth Journey Title Section */}
+        <section className="w-full max-w-5xl py-2 mx-auto relative text-center lg:text-center">
+          <h3 className="text-lg sm:text-xl lg:text-2xl mb-1 font-semibold leading-tight text-[#012F73]">
+            Our Growth Journey
+          </h3>
+        </section>
+
+        {/* Growth Content */}
+        <div className="flex items-center justify-center w-full">
+          <p className="text-justify text-gray-700 leading-relaxed text-base sm:text-lg lg:text-lg max-w-5xl px-2">
+            Today, <span className="font-bold text-red-600">Annanagar Auto Service</span> maintains a monthly turnover of <span className="font-semibold">800KL</span> and an annual
+            turnover nearing <span className="font-semibold">10,000KL</span>. A tightly knit, vertically structured team ensures smooth day-
+            to-day operations and a consistent focus on service excellence.
+          </p>
+        </div>
+
+        {/* Future Vision Section */}
+        <section className="w-full px-4 sm:px-6 py-6 md:py-8">
+          <div className="max-w-5xl mx-auto">
+            <div className="space-y-4 text-gray-700 leading-relaxed">
               <p className="text-justify text-base sm:text-lg lg:text-lg max-w-5xl mx-auto">
                 With a strong foundation built on tradition and an eye toward the future, <span className="font-bold text-red-600">Annanagar Auto
                 Service</span> remains committed to innovation, sustainability, and delivering the highest
@@ -344,7 +352,7 @@ export default function HomePage() {
               </p>
             </div>
           </div>
-        </div>
+        </section>
       </section>
 
       {/* HPCL Section */}
@@ -428,9 +436,9 @@ export default function HomePage() {
       {/* Awards Carousel - Continuous Scrolling */}
       <section className="py-6 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-xl sm:text-2xl font-bold text-center mb-6" style={{ color: '#012F73' }}>
+          <h3 className="text-lg sm:text-xl lg:text-2xl mb-6 font-semibold leading-tight text-[#012F73] text-center">
             Awards & Recognition
-          </h2>
+          </h3>
           <div className="relative overflow-hidden">
             <div className="flex animate-scroll space-x-8 sm:space-x-12" style={{ width: 'max-content' }}>
               {/* First set of awards */}
@@ -489,29 +497,30 @@ export default function HomePage() {
           <h3 className="mb-4 text-lg sm:text-xl font-semibold text-center lg:text-left" style={{ color: '#012F73' }}>Contact Information</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <div className="text-center sm:text-left">
-              <h4 className="font-semibold mb-2 text-sm sm:text-base" style={{ color: '#012F73' }}>Address</h4>
-              <p className="text-blue-700 text-xs sm:text-sm lg:text-base leading-relaxed">
-                Anna Nagar Auto Service<br />
-                HP Petrol Bunk<br />
-                Anna Nagar, Chennai<br />
-                Tamil Nadu, India
+              <h4 className="font-semibold mb-3 text-sm sm:text-base" style={{ color: '#012F73' }}>Address</h4>
+              <p className="text-blue-700 text-xs sm:text-sm lg:text-base leading-relaxed space-y-0.5">
+                <span className="block">Anna Nagar Auto Service</span>
+                <span className="block">HP Petrol Bunk</span>
+                <span className="block">Anna Nagar, Chennai</span>
+                <span className="block">Tamil Nadu, India</span>
               </p>
             </div>
             <div className="text-center sm:text-left">
-              <h4 className="font-semibold mb-2 text-sm sm:text-base" style={{ color: '#012F73' }}>Contact Details</h4>
-              <p className="text-blue-700 text-xs sm:text-sm lg:text-base leading-relaxed">
-                Phone: +91-XX-XXXXXXXX<br />
-                Email: info@annanagar-hp.com<br />
-                Operating Hours: 24/7
+              <h4 className="font-semibold mb-3 text-sm sm:text-base" style={{ color: '#012F73' }}>Contact Details</h4>
+              <p className="text-blue-700 text-xs sm:text-sm lg:text-base leading-relaxed space-y-0.5">
+                <span className="block">Phone: +91-XX-XXXXXXXX</span>
+                <span className="block">Email: info@annanagar-hp.com</span>
+                <span className="block">Operating Hours: 24/7</span>
               </p>
             </div>
             <div className="text-center sm:text-left sm:col-span-2 lg:col-span-1">
-              <h4 className="font-semibold mb-2 text-sm sm:text-base" style={{ color: '#012F73' }}>Services</h4>
-              <ul className="text-blue-700 text-xs sm:text-sm lg:text-base leading-relaxed list-disc list-inside">
-                <li>Petrol & Diesel</li>
-                <li>Engine Oil & Lubricants</li>
-                <li>Car Wash Services</li>
-                <li>Tire Services</li>
+              <h4 className="font-semibold mb-3 text-sm sm:text-base" style={{ color: '#012F73' }}>Services</h4>
+              <ul className="text-blue-700 text-xs sm:text-sm lg:text-base leading-relaxed space-y-1">
+                <li>Petrol & Diesel (24/7)</li>
+                <li>Pollution Testing Centre</li>
+                <li>Instant Insurance Services</li>
+                <li>Free Oil Change (Two-Wheelers)</li>
+                <li>Free Windshield Cleaning</li>
               </ul>
             </div>
           </div>

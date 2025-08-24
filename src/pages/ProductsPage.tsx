@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
-import { MdOilBarrel, MdLocalGasStation, MdStar, MdVerifiedUser, MdPeople } from "react-icons/md";
+import { MdOilBarrel, MdLocalGasStation, MdVerifiedUser, MdPeople } from "react-icons/md";
 
 interface ProductItem {
   name: string;
@@ -173,7 +173,7 @@ export default function ProductsPage() {
             >
               {/* Category Header */}
               <div className="mb-6 sm:mb-8">
-                <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-3 mb-4">
+                <div className="flex flex-row items-center justify-center space-x-3 mb-4">
                   <div className={`p-3 rounded-lg bg-gradient-to-br ${category.color} border border-gray-200 shadow-sm w-fit`}>
                     {React.cloneElement(category.icon, { 
                       className: `w-5 h-5 sm:w-6 sm:h-6 ${categoryIndex === 0 ? 'text-[#012F73]' : 'text-red-600'}` 
@@ -181,7 +181,6 @@ export default function ProductsPage() {
                   </div>
                   <h2 className="text-2xl sm:text-3xl font-bold text-[#012F73]">{category.category}</h2>
                 </div>
-                <p className="text-gray-600 text-sm sm:text-base px-2 sm:px-0">Premium quality {category.category.toLowerCase()} for optimal performance</p>
               </div>
               
               {/* Products Grid */}
@@ -316,7 +315,7 @@ export default function ProductsPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
             {[
               { 
-                icon: <MdStar className="w-6 h-6 sm:w-8 sm:h-8" />,
+                icon: <img src="/award.png" alt="ISO Certificate" className="w-6 h-6 sm:w-8 sm:h-8 object-contain" />,
                 title: "ISO Certified", 
                 desc: "ISO9001:2000 certified quality management system", 
                 color: "from-red-500 to-blue-600" 

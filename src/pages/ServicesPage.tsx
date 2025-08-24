@@ -100,11 +100,19 @@ export default function ServicesPage() {
       
       <main className="flex-1">
         {/* Hero Section */}
-        <div className="relative bg-gradient-to-r from-[#012F73] to-blue-600 text-white py-16 sm:py-20 lg:py-28 overflow-hidden">
-          <div className="absolute inset-0 bg-black/20"></div>
-          <div className="container mx-auto px-4 relative z-10 text-center">
+        <div className="relative bg-gradient-to-r from-[#012F73] to-blue-600 text-white py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8">
+          {/* Background Image */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+            style={{ backgroundImage: "url('/service.png')" }}
+          ></div>
+          
+          {/* Content */}
+          <div className="relative max-w-7xl mx-auto text-center">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Our Services</h1>
-            <p className="text-lg sm:text-xl lg:text-2xl max-w-3xl mx-auto opacity-90">Enhancing your driving experience with premium automotive care</p>
+            <p className="text-lg sm:text-xl text-blue-100 max-w-3xl mx-auto px-4">
+              Enhancing your driving experience with premium automotive care
+            </p>
           </div>
         </div>
 
