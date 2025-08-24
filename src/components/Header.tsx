@@ -63,11 +63,11 @@ export default function Header() {
       </div>
 
       {/* Navigation Links */}
-      <div className="bg-white w-full shadow-md overflow-x-auto">
-        <div className="flex justify-center min-w-max px-4 sm:px-6 lg:px-8">
+      <div className="bg-white w-full shadow-md">
+        <div className="flex justify-center px-4 sm:px-6 lg:px-8 overflow-x-auto scrollbar-hide">
           <Link 
             to="/" 
-            className="no-underline py-2 sm:py-3 px-2 sm:px-4 lg:px-5 text-xs sm:text-sm lg:text-base font-bold uppercase tracking-wider transition-all duration-300 relative whitespace-nowrap"
+            className="no-underline py-2 sm:py-3 px-2 sm:px-4 lg:px-5 text-xs sm:text-sm lg:text-base font-bold uppercase tracking-wider transition-all duration-300 relative whitespace-nowrap flex-shrink-0"
             style={{ color: '#012F73' }}
           >
             HOME
@@ -78,7 +78,7 @@ export default function Header() {
           
           <Link 
             to="/products" 
-            className="no-underline py-2 sm:py-3 px-2 sm:px-4 lg:px-5 text-xs sm:text-sm lg:text-base font-bold uppercase tracking-wider transition-all duration-300 relative whitespace-nowrap"
+            className="no-underline py-2 sm:py-3 px-2 sm:px-4 lg:px-5 text-xs sm:text-sm lg:text-base font-bold uppercase tracking-wider transition-all duration-300 relative whitespace-nowrap flex-shrink-0"
             style={{ color: '#012F73' }}
           >
             PRODUCTS
@@ -89,7 +89,7 @@ export default function Header() {
           
           <Link 
             to="/services" 
-            className="no-underline py-2 sm:py-3 px-2 sm:px-4 lg:px-5 text-xs sm:text-sm lg:text-base font-bold uppercase tracking-wider transition-all duration-300 relative whitespace-nowrap"
+            className="no-underline py-2 sm:py-3 px-2 sm:px-4 lg:px-5 text-xs sm:text-sm lg:text-base font-bold uppercase tracking-wider transition-all duration-300 relative whitespace-nowrap flex-shrink-0"
             style={{ color: '#012F73' }}
           >
             SERVICES
@@ -100,7 +100,7 @@ export default function Header() {
           
           <Link 
             to="/gallery" 
-            className="no-underline py-2 sm:py-3 px-2 sm:px-4 lg:px-5 text-xs sm:text-sm lg:text-base font-bold uppercase tracking-wider transition-all duration-300 relative whitespace-nowrap"
+            className="no-underline py-2 sm:py-3 px-2 sm:px-4 lg:px-5 text-xs sm:text-sm lg:text-base font-bold uppercase tracking-wider transition-all duration-300 relative whitespace-nowrap flex-shrink-0"
             style={{ color: '#012F73' }}
           >
             GALLERY
@@ -111,7 +111,7 @@ export default function Header() {
           
           <Link 
             to="/contact" 
-            className="no-underline py-2 sm:py-3 px-2 sm:px-4 lg:px-5 text-xs sm:text-sm lg:text-base font-bold uppercase tracking-wider transition-all duration-300 relative whitespace-nowrap"
+            className="no-underline py-2 sm:py-3 px-2 sm:px-4 lg:px-5 text-xs sm:text-sm lg:text-base font-bold uppercase tracking-wider transition-all duration-300 relative whitespace-nowrap flex-shrink-0"
             style={{ color: '#012F73' }}
           >
             CONTACT
