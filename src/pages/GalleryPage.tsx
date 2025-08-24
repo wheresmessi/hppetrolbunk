@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export default function GalleryPage() {
-  const [activeCategory, setActiveCategory] = useState('awards');
+  const [activeCategory, setActiveCategory] = useState('all');
+  const navigate = useNavigate();
 
   const galleryImages = {
     awards: [
@@ -57,7 +59,16 @@ export default function GalleryPage() {
     ]
   };
 
+  // Get all images combined
+  const allImages = [
+    ...galleryImages.awards,
+    ...galleryImages.events,
+    ...galleryImages.initiatives,
+    ...galleryImages.training
+  ];
+
   const categories = [
+    { key: 'all', label: 'All Images', count: allImages.length },
     { key: 'awards', label: 'Awards & Recognition', count: galleryImages.awards.length },
     { key: 'events', label: 'Events & Festivals', count: galleryImages.events.length },
     { key: 'initiatives', label: 'Initiatives & Launches', count: galleryImages.initiatives.length },
@@ -108,10 +119,13 @@ export default function GalleryPage() {
       </section>
 
       {/* Gallery Grid */}
-      <section className="py-16 px-6 bg-white">
+      <section className="py-16 px-6 bg-gradient-to-b from-white via-white to-red-200">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {galleryImages[activeCategory as keyof typeof galleryImages].map((image) => (
+            {(activeCategory === 'all' 
+              ? allImages 
+              : galleryImages[activeCategory as keyof typeof galleryImages]
+            ).map((image) => (
               <div 
                 key={image.id}
                 className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 bg-white border border-gray-200"
@@ -135,17 +149,23 @@ export default function GalleryPage() {
       </section>
 
       {/* Visit Us CTA */}
-      <section className="bg-gradient-to-r from-[#012F73] to-blue-700 text-white py-12 px-6">
+      <section className="bg-gradient-to-b from-red-200 to-blue-200 py-12 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">Visit Our Facility</h2>
-          <p className="text-blue-100 mb-8">
+          <h2 className="text-3xl font-bold mb-4 text-gray-800">Visit Our Facility</h2>
+          <p className="text-gray-600 mb-8">
             Experience our services firsthand. We're open 24/7 to serve you better.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-[#012F73] font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+            <button 
+              onClick={() => window.open('https://maps.google.com/?q=Anna+Nagar+Auto+Service+HP+Petrol+Bunk+Chennai', '_blank')}
+              className="bg-[#012F73] text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-800 transition-colors duration-200 shadow-lg hover:shadow-xl"
+            >
               Get Directions
             </button>
-            <button className="border-2 border-white text-white font-semibold py-3 px-8 rounded-lg hover:bg-white hover:text-[#012F73] transition-colors duration-200">
+            <button 
+              onClick={() => navigate('/contact')}
+              className="border-2 border-red-400 text-gray-800 font-semibold py-3 px-8 rounded-lg hover:bg-red-400 hover:text-white transition-colors duration-200"
+            >
               Contact Us
             </button>
           </div>

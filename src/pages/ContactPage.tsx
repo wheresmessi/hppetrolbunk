@@ -54,7 +54,7 @@ export default function ContactPage() {
 
   return (
 
-    <div className="min-h-screen bg-blue-50">
+    <div className="min-h-screen bg-white">
 
       <Header />
 
@@ -64,8 +64,8 @@ export default function ContactPage() {
       <div className="relative bg-gradient-to-r from-[#012F73] to-blue-600 text-white py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8">
         {/* Background Image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-          style={{ backgroundImage: "url('/contact.png')" }}
+          className="absolute inset-0 bg-cover bg-no-repeat opacity-20"
+          style={{ backgroundImage: "url('/contact.png')", backgroundPosition: 'center 25%' }}
         ></div>
         
         {/* Content */}
@@ -93,7 +93,7 @@ export default function ContactPage() {
 
             <div className="w-full">
 
-              <h2 className="text-3xl font-bold text-blue-900 mb-8">Get in Touch</h2>
+              <h2 className="text-3xl font-bold mb-8" style={{ color: '#012F73' }}>Get in Touch</h2>
 
               
 
@@ -107,13 +107,13 @@ export default function ContactPage() {
 
                     <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
 
-                      <MapPinIcon className="w-6 h-6 text-blue-600" />
+                      <MapPinIcon className="w-6 h-6" style={{ color: '#012F73' }} />
 
                     </div>
 
                     <div>
 
-                      <h3 className="text-xl font-semibold text-blue-800 mb-2">Visit Our Station</h3>
+                      <h3 className="text-xl font-semibold mb-2" style={{ color: '#012F73' }}>Visit Our Station</h3>
 
                       <p className="text-gray-700">
 
@@ -147,7 +147,7 @@ export default function ContactPage() {
 
                     <div>
 
-                      <h3 className="text-xl font-semibold text-blue-800 mb-2">Call Us</h3>
+                      <h3 className="text-xl font-semibold mb-2" style={{ color: '#012F73' }}>Call Us</h3>
 
                       <p className="text-gray-700">
 
@@ -169,15 +169,15 @@ export default function ContactPage() {
 
                   <div className="flex items-start space-x-4">
 
-                    <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
 
-                      <EnvelopeIcon className="w-6 h-6 text-green-600" />
+                      <EnvelopeIcon className="w-6 h-6" style={{ color: '#012F73' }} />
 
                     </div>
 
                     <div>
 
-                      <h3 className="text-xl font-semibold text-blue-800 mb-2">Email Us</h3>
+                      <h3 className="text-xl font-semibold mb-2" style={{ color: '#012F73' }}>Email Us</h3>
 
                       <p className="text-gray-700">
 
@@ -199,15 +199,15 @@ export default function ContactPage() {
 
                   <div className="flex items-start space-x-4">
 
-                    <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
 
-                      <ClockIcon className="w-6 h-6 text-purple-600" />
+                      <ClockIcon className="w-6 h-6 text-red-600" />
 
                     </div>
 
                     <div>
 
-                      <h3 className="text-xl font-semibold text-blue-800 mb-2">Operating Hours</h3>
+                      <h3 className="text-xl font-semibold mb-2" style={{ color: '#012F73' }}>Operating Hours</h3>
 
                       <p className="text-gray-700">
 
@@ -235,7 +235,7 @@ export default function ContactPage() {
 
             <div>
 
-              <h2 className="text-3xl font-bold text-blue-900 mb-8">Send Us a Message</h2>
+              <h2 className="text-3xl font-bold mb-8" style={{ color: '#012F73' }}>Send Us a Message</h2>
 
               
 
@@ -437,7 +437,11 @@ export default function ContactPage() {
 
                   type="submit"
 
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  className="w-full text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 focus:ring-2 focus:ring-red-500 focus:ring-offset-2" style={{ backgroundColor: '#012F73' }}
+
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#0d2454'}
+
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#012F73'}
 
                 >
 
@@ -465,7 +469,7 @@ export default function ContactPage() {
 
           <div className="text-center mb-12">
 
-            <h2 className="text-4xl font-bold text-blue-900 mb-2">Find Us on Map</h2>
+            <h2 className="text-4xl font-bold mb-2" style={{ color: '#012F73' }}>Find Us on Map</h2>
 
             <p className="text-gray-700 text-lg">E/100, 3rd Avenue, Anna Nagar, Chennai - 600 102</p>
 
@@ -473,7 +477,7 @@ export default function ContactPage() {
 
           
 
-          <div className="bg-white rounded-xl shadow-xl overflow-hidden border-2 border-blue-100">
+          <div className="bg-white rounded-xl shadow-xl overflow-hidden border-2" style={{ borderColor: '#012F73' }}>
 
             <div className="h-[500px] w-full">
 
@@ -506,44 +510,6 @@ export default function ContactPage() {
       </section>
 
 
-
-      {/* Emergency Contact */}
-
-      <section className="bg-red-600 text-white py-12 px-6">
-
-        <div className="max-w-4xl mx-auto text-center">
-
-          <h2 className="text-3xl font-bold mb-4">Emergency Services</h2>
-
-          <p className="text-red-100 mb-6">
-
-            Need immediate assistance? Our emergency services are available 24/7.
-
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-
-            <div className="bg-white bg-opacity-20 rounded-lg p-4">
-
-              <div className="text-lg font-bold">Emergency Hotline</div>
-
-              <div className="text-2xl font-bold">+91-90XXX-XXXXX</div>
-
-            </div>
-
-            <div className="bg-white bg-opacity-20 rounded-lg p-4">
-
-              <div className="text-lg font-bold">Roadside Assistance</div>
-
-              <div className="text-2xl font-bold">Available 24/7</div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
 
 
 

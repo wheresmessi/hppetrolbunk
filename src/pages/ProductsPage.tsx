@@ -299,9 +299,6 @@ export default function ProductsPage() {
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-8 sm:mb-12">
-            <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-full shadow-lg mb-4 sm:mb-6">
-              <MdVerifiedUser className="w-6 h-6 sm:w-8 sm:h-8" style={{ color: '#012f73' }} />
-            </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6" style={{ color: '#012f73' }}>
               Quality Assurance
             </h2>
@@ -315,7 +312,7 @@ export default function ProductsPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
             {[
               { 
-                icon: <img src="/award.png" alt="ISO Certificate" className="w-6 h-6 sm:w-8 sm:h-8 object-contain" />,
+                icon: <img src="/iso-9001-certification.png" alt="ISO Certificate" className="w-10 h-10 sm:w-12 sm:h-12 object-contain" />,
                 title: "ISO Certified", 
                 desc: "ISO9001:2000 certified quality management system", 
                 color: "from-red-500 to-blue-600" 
