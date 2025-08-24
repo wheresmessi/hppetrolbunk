@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
+import { useState as useStateEffect, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { BiChevronDown, BiChevronUp } from "react-icons/bi";
-import { MdOilBarrel, MdLocalGasStation, MdVerifiedUser, MdPeople } from "react-icons/md";
+import { 
+  MdLocalGasStation, 
+  MdOilBarrel, 
+  MdVerifiedUser, 
+  MdPeople
+} from 'react-icons/md';
+import { BiChevronDown, BiChevronUp } from 'react-icons/bi';
 
 interface ProductItem {
   name: string;
@@ -23,6 +29,27 @@ interface ProductCategory {
 
 export default function ProductsPage() {
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
+  const [visibleSections, setVisibleSections] = useStateEffect<Set<string>>(new Set());
+
+  // Intersection Observer for smooth scroll animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.target.id) {
+            setVisibleSections(prev => new Set(prev).add(entry.target.id));
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: '50px' }
+    );
+
+    // Observe animated sections
+    const sections = document.querySelectorAll('[data-animate]');
+    sections.forEach(section => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
 
   const toggleCard = (cardId: string) => {
     setExpandedCard(expandedCard === cardId ? null : cardId);
@@ -145,7 +172,13 @@ export default function ProductsPage() {
       <Header />
       
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-[#012F73] to-blue-600 text-white py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8">
+      <div 
+        id="hero"
+        data-animate="true"
+        className={`relative bg-gradient-to-r from-[#012F73] to-blue-600 text-white py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 transition-all duration-1000 ease-out ${
+          visibleSections.has('hero') ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+        }`}
+      >
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
@@ -153,7 +186,9 @@ export default function ProductsPage() {
         ></div>
         
         {/* Content */}
-        <div className="relative max-w-7xl mx-auto text-center">
+        <div className={`relative max-w-7xl mx-auto text-center transition-all duration-1000 ease-out delay-300 ${
+          visibleSections.has('hero') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Quality Fuels & Lubricants</h1>
           <p className="text-lg sm:text-xl text-blue-100 max-w-3xl mx-auto px-4">
             Premium HPCL products to keep your vehicles running smoothly and efficiently
@@ -162,7 +197,13 @@ export default function ProductsPage() {
       </div>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
+      <main 
+        id="products-content"
+        data-animate="true"
+        className={`max-w-7xl mx-auto py-8 sm:py-12 px-4 sm:px-6 lg:px-8 transition-all duration-1000 ease-out ${
+          visibleSections.has('products-content') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
+      >
         {/* Products by Category */}
         <div className="space-y-12 sm:space-y-16">
           {products.map((category, categoryIndex) => (
@@ -295,7 +336,13 @@ export default function ProductsPage() {
       </main>
 
       {/* Enhanced Quality Assurance Section */}
-      <section className="mt-12 sm:mt-16 bg-gradient-to-b from-blue-100 to-blue-100 py-8 sm:py-12 px-4 sm:px-6 border-t border-blue-200">
+      <section 
+        id="quality-section"
+        data-animate="true"
+        className={`mt-12 sm:mt-16 bg-gradient-to-b from-blue-100 to-blue-100 py-8 sm:py-12 px-4 sm:px-6 border-t border-blue-200 transition-all duration-1000 ease-out ${
+          visibleSections.has('quality-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
+      >
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-8 sm:mb-12">

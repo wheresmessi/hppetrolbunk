@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { useNavigate } from 'react-router-dom';
@@ -15,6 +16,27 @@ interface Service {
 
 export default function ServicesPage() {
   const navigate = useNavigate();
+  const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
+
+  // Intersection Observer for smooth scroll animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.target.id) {
+            setVisibleSections(prev => new Set(prev).add(entry.target.id));
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: '50px' }
+    );
+
+    // Observe animated sections
+    const sections = document.querySelectorAll('[data-animate]');
+    sections.forEach(section => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
 
   // General Services
   const generalServices: Service[] = [
@@ -100,7 +122,13 @@ export default function ServicesPage() {
       
       <main className="flex-1">
         {/* Hero Section */}
-        <div className="relative bg-gradient-to-r from-[#012F73] to-blue-600 text-white py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8">
+        <div 
+          id="hero"
+          data-animate="true"
+          className={`relative bg-gradient-to-r from-[#012F73] to-blue-600 text-white py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 transition-all duration-1000 ease-out ${
+            visibleSections.has('hero') ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+          }`}
+        >
           {/* Background Image */}
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
@@ -108,7 +136,9 @@ export default function ServicesPage() {
           ></div>
           
           {/* Content */}
-          <div className="relative max-w-7xl mx-auto text-center">
+          <div className={`relative max-w-7xl mx-auto text-center transition-all duration-1000 ease-out delay-300 ${
+            visibleSections.has('hero') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Our Services</h1>
             <p className="text-lg sm:text-xl text-blue-100 max-w-3xl mx-auto px-4">
               Enhancing your driving experience with premium automotive care
@@ -117,7 +147,13 @@ export default function ServicesPage() {
         </div>
 
         {/* Advertisement Section */}
-        <div className="bg-gradient-to-b from-blue-100 to-red-100 py-24">
+        <div 
+          id="advertisement"
+          data-animate="true"
+          className={`bg-gradient-to-b from-blue-100 to-red-100 py-24 transition-all duration-1000 ease-out ${
+            visibleSections.has('advertisement') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12" style={{ color: '#012F73' }}>Advertisement Space</h2>
             <div className="max-w-5xl mx-auto bg-white rounded-xl overflow-hidden shadow-lg border-2 border-red-600">
@@ -145,7 +181,13 @@ export default function ServicesPage() {
         </div>
 
         {/* General Services Section */}
-        <div className="bg-gradient-to-b from-red-100 to-white py-12">
+        <div 
+          id="services-grid"
+          data-animate="true"
+          className={`bg-gradient-to-b from-red-100 to-white py-12 transition-all duration-1000 ease-out ${
+            visibleSections.has('services-grid') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12" style={{ color: '#012F73' }}>Our Services</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">

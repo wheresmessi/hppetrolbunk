@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import Header from '../components/Header';
 
@@ -9,6 +9,7 @@ import { MapPinIcon, PhoneIcon, EnvelopeIcon, ClockIcon } from '@heroicons/react
 
 
 export default function ContactPage() {
+  const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
 
   const [formData, setFormData] = useState({
 
@@ -23,6 +24,26 @@ export default function ContactPage() {
     message: ''
 
   });
+
+  // Intersection Observer for smooth scroll animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.target.id) {
+            setVisibleSections(prev => new Set(prev).add(entry.target.id));
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: '50px' }
+    );
+
+    // Observe animated sections
+    const sections = document.querySelectorAll('[data-animate]');
+    sections.forEach(section => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
 
 
 
@@ -43,11 +64,9 @@ export default function ContactPage() {
 
 
   const handleSubmit = (e: React.FormEvent) => {
-
+    e.preventDefault();
     // Form submission is now handled by FormSubmit
-
     console.log('Form submitted:', formData);
-
   };
 
 
@@ -61,7 +80,13 @@ export default function ContactPage() {
       
 
       {/* Contact Hero Section */}
-      <div className="relative bg-gradient-to-r from-[#012F73] to-blue-600 text-white py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8">
+      <div 
+        id="hero"
+        data-animate="true"
+        className={`relative bg-gradient-to-r from-[#012F73] to-blue-600 text-white py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 transition-all duration-1200 ease-out ${
+          visibleSections.has('hero') ? 'opacity-100 scale-100 blur-0' : 'opacity-0 scale-110 blur-sm'
+        }`}
+      >
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-no-repeat opacity-20"
@@ -69,9 +94,15 @@ export default function ContactPage() {
         ></div>
         
         {/* Content */}
-        <div className="relative max-w-7xl mx-auto text-center">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Contact Us</h1>
-          <p className="text-lg sm:text-xl text-blue-100 max-w-3xl mx-auto px-4">
+        <div className={`relative max-w-7xl mx-auto text-center transition-all duration-1200 ease-out delay-500 ${
+          visibleSections.has('hero') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+        }`}>
+          <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 transition-all duration-1000 ease-out delay-700 ${
+            visibleSections.has('hero') ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
+          }`}>Contact Us</h1>
+          <p className={`text-lg sm:text-xl text-blue-100 max-w-3xl mx-auto px-4 transition-all duration-1000 ease-out delay-900 ${
+            visibleSections.has('hero') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
+          }`}>
             Get in touch with us for any queries, feedback, or support. We're here to serve you 24/7.
           </p>
         </div>
@@ -81,7 +112,13 @@ export default function ContactPage() {
 
       {/* Main Contact Content */}
 
-      <section className="py-16 px-6">
+      <section 
+        id="contact-content"
+        data-animate="true"
+        className={`py-16 px-6 transition-all duration-1000 ease-out ${
+          visibleSections.has('contact-content') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
+      >
 
         <div className="max-w-6xl mx-auto">
 
@@ -91,7 +128,9 @@ export default function ContactPage() {
 
             {/* Contact Information */}
 
-            <div className="w-full">
+            <div className={`w-full transition-all duration-1000 ease-out delay-200 ${
+              visibleSections.has('contact-content') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+            }`}>
 
               <h2 className="text-3xl font-bold mb-8" style={{ color: '#012F73' }}>Get in Touch</h2>
 
@@ -101,7 +140,11 @@ export default function ContactPage() {
 
               <div className="space-y-6">
 
-                <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
+                <div className={`bg-white rounded-lg shadow-lg p-6 border border-gray-200 transition-all duration-700 ease-out ${
+                  visibleSections.has('contact-content') 
+                    ? 'opacity-100 translate-x-0' 
+                    : 'opacity-0 -translate-x-4'
+                }`} style={{ transitionDelay: '600ms' }}>
 
                   <div className="flex items-start space-x-4">
 
@@ -135,7 +178,11 @@ export default function ContactPage() {
 
 
 
-                <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
+                <div className={`bg-white rounded-lg shadow-lg p-6 border border-gray-200 transition-all duration-700 ease-out ${
+                  visibleSections.has('contact-content') 
+                    ? 'opacity-100 translate-x-0' 
+                    : 'opacity-0 -translate-x-4'
+                }`} style={{ transitionDelay: '800ms' }}>
 
                   <div className="flex items-start space-x-4">
 
@@ -165,7 +212,11 @@ export default function ContactPage() {
 
 
 
-                <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
+                <div className={`bg-white rounded-lg shadow-lg p-6 border border-gray-200 transition-all duration-700 ease-out ${
+                  visibleSections.has('contact-content') 
+                    ? 'opacity-100 translate-x-0' 
+                    : 'opacity-0 -translate-x-4'
+                }`} style={{ transitionDelay: '1000ms' }}>
 
                   <div className="flex items-start space-x-4">
 
@@ -195,7 +246,11 @@ export default function ContactPage() {
 
 
 
-                <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
+                <div className={`bg-white rounded-lg shadow-lg p-6 border border-gray-200 transition-all duration-700 ease-out ${
+                  visibleSections.has('contact-content') 
+                    ? 'opacity-100 translate-x-0' 
+                    : 'opacity-0 -translate-x-4'
+                }`} style={{ transitionDelay: '1200ms' }}>
 
                   <div className="flex items-start space-x-4">
 
@@ -233,7 +288,9 @@ export default function ContactPage() {
 
             {/* Contact Form */}
 
-            <div>
+            <div className={`transition-all duration-1000 ease-out delay-400 ${
+              visibleSections.has('contact-content') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
+            }`}>
 
               <h2 className="text-3xl font-bold mb-8" style={{ color: '#012F73' }}>Send Us a Message</h2>
 
@@ -463,11 +520,19 @@ export default function ContactPage() {
 
       {/* Map Section */}
 
-      <section className="bg-white py-16 px-6 border-t">
+      <section 
+        id="map-section"
+        data-animate="true"
+        className={`bg-white py-16 px-6 border-t transition-all duration-1000 ease-out ${
+          visibleSections.has('map-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
+      >
 
         <div className="max-w-6xl mx-auto">
 
-          <div className="text-center mb-12">
+          <div className={`text-center mb-12 transition-all duration-1000 ease-out delay-200 ${
+            visibleSections.has('map-section') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          }`}>
 
             <h2 className="text-4xl font-bold mb-2" style={{ color: '#012F73' }}>Find Us on Map</h2>
 
@@ -477,7 +542,9 @@ export default function ContactPage() {
 
           
 
-          <div className="bg-white rounded-xl shadow-xl overflow-hidden border-2" style={{ borderColor: '#012F73' }}>
+          <div className={`bg-white rounded-xl shadow-xl overflow-hidden border-2 transition-all duration-1000 ease-out delay-400 transform ${
+            visibleSections.has('map-section') ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+          }`} style={{ borderColor: '#012F73' }}>
 
             <div className="h-[500px] w-full">
 
