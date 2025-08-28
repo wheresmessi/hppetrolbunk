@@ -41,10 +41,11 @@ export default function HomePage() {
 
   // Hero slider - using same image in loop for now
   const heroSlides = [
-    { id: 1, image: '/1.jpg'},
-    { id: 2, image: '/2.jpg'},
-    { id: 3, image: '/3.jpg'},
-    { id: 4, image: '/4.jpg'}
+    { id: 1, image: '/hero.jpg'},
+    { id: 2, image: '/1.jpg'},
+    { id: 3, image: '/2.jpg'},
+    { id: 4, image: '/3.jpg'},
+    { id: 5, image: '/4.jpg'}
   ];
 
   // Intersection Observer for smooth scroll animations
@@ -187,8 +188,8 @@ export default function HomePage() {
       carry forward his remarkable legacy.
     </p>
   </div>
-        <section className="w-full flex items-center justify-center px-10">
-  <div className="w-full max-w-4xl">
+                <section className="w-full flex items-center justify-center">
+  <div className="w-full max-w-5xl px-2">
     
     {/* Mobile View (stacked card) */}
     <div className="relative bg-blue-200 rounded-lg shadow-lg p-6 flex flex-col items-center md:hidden h-[525px]">
@@ -198,7 +199,7 @@ export default function HomePage() {
 
       <p className="text-gray-700 text-sm mb-6">
         Born in 1950 — the year India became a Republic — in February, the month with the 
-        fewest letters, and on the day after the “sweetest” number, the second, Mr. J. Antony 
+        fewest letters, and on the day after the "sweetest" number, the second, Mr. J. Antony 
         displayed exceptional intellect and business acumen. His ventures spanned construction, 
         transport, and education, but his most enduring accomplishment came on April 29, 
         1994, with the establishment of Annanagar Auto Service and a clear vision to create a 
@@ -246,7 +247,6 @@ export default function HomePage() {
 
 
         {/* Company Philosophy and Legacy Section */}
-        <section className="w-full px-4 sm:px-6 py-8 md:py-10">
           <div className="max-w-5xl mx-auto">
             <div className="space-y-4 text-gray-700 leading-relaxed">
               <p className="text-justify text-base sm:text-lg lg:text-lg max-w-5xl mx-auto">
@@ -265,7 +265,6 @@ export default function HomePage() {
               </p>
             </div>
           </div>
-        </section>
 
         {/* Leadership Excellence Section */}
         <section 
@@ -278,19 +277,22 @@ export default function HomePage() {
           <div className="max-w-full mx-auto">
             {/* Mobile Layout */}
             <div className="lg:hidden">
-              <div className="mx-4 mb-6 bg-red-200 rounded-xl shadow-lg p-6 sm:p-8 flex flex-col h-[32rem] overflow-hidden">
+              <div className="mx-4 mb-6 bg-red-200 rounded-xl shadow-lg p-6 sm:p-8 flex flex-col h-[65rem] overflow-hidden">
                 {/* Title and Content - 50% */}
                 <div className="flex-1 flex flex-col justify-center">
                    <h2 className="text-xl font-bold text-black mb-3 underline decoration-blue-200 decoration-2 underline-offset-4">
   Mrs. A. Elizabeth</h2>
                   <p className="text-black text-sm sm:text-base leading-relaxed mb-4">
-                    Following Mr. Antony's passing, leadership transitioned to Mrs. A. Elizabeth, an MBA graduate with a vision for innovation and growth. Under her stewardship, the business reached new heights:
+                    Mrs. A. Elizabeth, an MBA graduate with a vision for innovation and growth, has been instrumental in shaping the business into a successful and award-winning outlet.
+                    Her leadership journey began in 2015, when she established a Montessori Kindergarten Teacher Training Institute. The institute welcomed individuals from varied educational backgrounds, including those who had studied up to 10th or 12th standard, and helped them identify their strengths and capabilities. By tailoring training programs to the needs of each academic year, the institute successfully trained over 650 people. This experience gave her a strong foundation in mentorship, guidance, and people management—values she later carried into her business leadership.
+                    With this background, she built a culture of respect, growth, and teamwork among her employees at the HP outlet, making it one of the most successful in the region.
                   </p>
                   <ul className="space-y-1 text-black text-xs sm:text-sm">
                     <li><strong>2019 –</strong> Highest sales in South India</li>
                     <li><strong>2020 –</strong> Highest lube sales and best performance in HP Pay</li>
                     <li><strong>2021 –</strong> Recognition for presentation at Yeskaud</li>
                     <li><strong>2022 –</strong> Best Women Dealer Award (Nov 29)</li>
+                    <li><strong>2025 –</strong> HP Uttam Dealer Award</li>
                   </ul>
                 </div>
                 {/* Image - 50% */}
@@ -306,16 +308,19 @@ export default function HomePage() {
               <div className="absolute left-0 top-0 w-2/4 h-full z-5">
                 <img src="/elizabeth.png" alt="Elizabeth" className="w-full h-full object-contain rounded-r-xl" />
               </div>
-              <div className="absolute right-0 top-0 w-2/3 h-80 bg-blue-200 rounded-l-xl shadow-lg p-6 sm:p-8 flex flex-col justify-center">
+              <div className="absolute right-0 -top-16 w-2/3 h-96 bg-blue-200 rounded-l-xl shadow-lg p-6 sm:p-8 flex flex-col justify-center">
                 <h3 className="text-xl sm:text-2xl font-bold text-black mb-4 border-b-4 border-red-200 pb-2 inline-block">Mrs. A. Elizabeth</h3>
                 <p className="text-black text-sm sm:text-base leading-relaxed mb-4">
-                  Following Mr. Antony's passing, leadership transitioned to Mrs. A. Elizabeth, an MBA graduate with a vision for innovation and growth. Under her stewardship, the business reached new heights:
+                  Mrs. A. Elizabeth, an MBA graduate with a vision for innovation and growth, has been instrumental in shaping the business into a successful and award-winning outlet.
+                  Her leadership journey began in 2015, when she established a Montessori Kindergarten Teacher Training Institute. The institute welcomed individuals from varied educational backgrounds, including those who had studied up to 10th or 12th standard, and helped them identify their strengths and capabilities. By tailoring training programs to the needs of each academic year, the institute successfully trained over 650 people. This experience gave her a strong foundation in mentorship, guidance, and people management—values she later carried into her business leadership.
+                  With this background, she built a culture of respect, growth, and teamwork among her employees at the HP outlet, making it one of the most successful in the region.
                 </p>
                 <ul className="space-y-2 text-black text-sm sm:text-base">
                   <li><strong>2019 –</strong> Highest sales in South India</li>
                   <li><strong>2020 –</strong> Highest lube sales and best performance in HP Pay</li>
                   <li><strong>2021 –</strong> Recognition for presentation at Yeskaud</li>
                   <li><strong>2022 –</strong> Best Women Dealer Award (Nov 29)</li>
+                  <li><strong>2025 –</strong> HP Uttam Dealer Award</li>
                 </ul>
               </div>
             </div>
@@ -342,8 +347,6 @@ export default function HomePage() {
         </div>
 
         {/* Future Vision Section */}
-        <section className="w-full px-4 sm:px-6 py-6 md:py-8">
-          <div className="max-w-5xl mx-auto">
             <div className="space-y-4 text-gray-700 leading-relaxed">
               <p className="text-justify text-base sm:text-lg lg:text-lg max-w-5xl mx-auto">
                 With a strong foundation built on tradition and an eye toward the future, <span className="font-bold text-red-600">Annanagar Auto
@@ -351,9 +354,7 @@ export default function HomePage() {
                 standards of customer satisfaction in the automotive service industry.
               </p>
             </div>
-          </div>
         </section>
-      </section>
 
       {/* HPCL Section */}
       <section 
