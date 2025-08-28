@@ -189,12 +189,19 @@ button, .btn {
 }
 
 .animate-scroll {
-  animation: scroll 15s linear infinite;
+  animation: scroll 8s linear infinite; /* Faster speed for mobile */
   will-change: transform;
 }
 
 .animate-scroll:hover {
   animation-play-state: paused;
+}
+
+/* Desktop speed - slower for better readability */
+@media (min-width: 768px) {
+  .animate-scroll {
+    animation: scroll 15s linear infinite;
+  }
 }
 
 /* Smooth transitions for better performance */

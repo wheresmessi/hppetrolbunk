@@ -213,7 +213,7 @@ export default function HomePage() {
     </div>
 
     {/* Desktop / Tablet View (absolute positioning) */}
-    <div className="hidden md:block relative w-full max-w-4xl h-80">
+    <div className="hidden md:block relative w-full max-w-4xl h-80 mx-auto">
       {/* Blue Box Background */}
       <div className="absolute inset-0 top-16 bg-blue-200 rounded-lg shadow-lg"></div>
       
@@ -342,18 +342,11 @@ export default function HomePage() {
           <p className="text-justify text-gray-700 leading-relaxed text-base sm:text-lg lg:text-lg max-w-5xl px-2">
             Today, <span className="font-bold text-red-600">Annanagar Auto Service</span> maintains a monthly turnover of <span className="font-semibold">800KL</span> and an annual
             turnover nearing <span className="font-semibold">10,000KL</span>. A tightly knit, vertically structured team ensures smooth day-
-            to-day operations and a consistent focus on service excellence.
-          </p>
-        </div>
-
-        {/* Future Vision Section */}
-            <div className="space-y-4 text-gray-700 leading-relaxed">
-              <p className="text-justify text-base sm:text-lg lg:text-lg max-w-5xl mx-auto">
-                With a strong foundation built on tradition and an eye toward the future, <span className="font-bold text-red-600">Annanagar Auto
+            to-day operations and a consistent focus on service excellence. With a strong foundation built on tradition and an eye toward the future, <span className="font-bold text-red-600">Annanagar Auto
                 Service</span> remains committed to innovation, sustainability, and delivering the highest
                 standards of customer satisfaction in the automotive service industry.
-              </p>
-            </div>
+          </p>
+        </div>
         </section>
 
       {/* HPCL Section */}
