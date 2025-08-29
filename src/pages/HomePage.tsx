@@ -494,27 +494,27 @@ export default function HomePage() {
               <h4 className="font-semibold mb-3 text-sm sm:text-base" style={{ color: '#012F73' }}>Address</h4>
               <p className="text-blue-700 text-xs sm:text-sm lg:text-base leading-relaxed space-y-0.5">
                 <span className="block">Anna Nagar Auto Service</span>
-                <span className="block">HP Petrol Bunk</span>
-                <span className="block">Anna Nagar, Chennai</span>
-                <span className="block">Tamil Nadu, India</span>
+                <span className="block">No E, 1, Anna Nagar 3rd Main Rd</span>
+                <span className="block">Block E, Annanagar East</span>
+                <span className="block">Chennai, Tamil Nadu - 600102</span>
               </p>
             </div>
             <div className="text-center sm:text-left">
               <h4 className="font-semibold mb-3 text-sm sm:text-base" style={{ color: '#012F73' }}>Contact Details</h4>
               <p className="text-blue-700 text-xs sm:text-sm lg:text-base leading-relaxed space-y-0.5">
-                <span className="block">Phone: +91-XX-XXXXXXXX</span>
-                <span className="block">Email: info@annanagar-hp.com</span>
-                <span className="block">Operating Hours: 24/7</span>
+                <span className="block">Phone: 9940277977, 9840843943</span>
+                <span className="block">Email: talk2eliz81@yahoo.in</span>
+                <span className="block">Fuel Station: 24/7 | Services: 4:00 AM - 12:00 PM</span>
               </p>
             </div>
             <div className="text-center sm:text-left sm:col-span-2 lg:col-span-1">
               <h4 className="font-semibold mb-3 text-sm sm:text-base" style={{ color: '#012F73' }}>Services</h4>
               <ul className="text-blue-700 text-xs sm:text-sm lg:text-base leading-relaxed space-y-1">
                 <li>Petrol & Diesel (24/7)</li>
-                <li>Pollution Testing Centre</li>
-                <li>Instant Insurance Services</li>
-                <li>Free Oil Change (Two-Wheelers)</li>
-                <li>Free Windshield Cleaning</li>
+                <li>Pollution Testing Centre (10:30 AM - 4:30 PM)</li>
+                <li>Instant Insurance Services (9:30 AM - 7:30 PM)</li>
+                <li>Free Oil Change - Two-Wheelers (6:00 AM - 12:00 PM)</li>
+                <li>Free Windshield Cleaning - Cars</li>
               </ul>
             </div>
           </div>
