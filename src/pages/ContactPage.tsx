@@ -44,7 +44,7 @@ export default function ContactPage() {
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-5xl font-bold mb-4">Contact Us</h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Get in touch with us for any queries, feedback, or support. We're here to serve you 24/7.
+            Get in touch with us for any queries, feedback, or support.
           </p>
         </div>
       </section>
@@ -116,7 +116,9 @@ export default function ContactPage() {
                       <h3 className="text-xl font-semibold text-blue-800 mb-2">Operating Hours</h3>
                       <p className="text-gray-700">
                         <strong>Fuel Station:</strong> 24/7<br />
-                        <strong>Services:</strong> 4:00 AM - 12:00 PM
+                        <strong>Pollution Testing Centre:</strong> 10:30 AM - 04:30 PM <br/>
+                        <strong>Instant Insurance Services:</strong> 09:30 AM - 07:30 PM <br/>
+                        <strong>Free Oil Change -Two Wheelers:</strong> 06:00 AM - 12:30 PM 
                       </p>
                     </div>
                   </div>
