@@ -270,30 +270,19 @@ button, .btn {
   image-rendering: crisp-edges;
 }
 
-/* Awards Carousel Continuous Scroll Animation */
+/* One keyframe for all devices */
 @keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .animate-scroll {
-  animation: scroll 8s linear infinite; /* Faster speed for mobile */
+  animation: scroll 10s linear infinite;
   will-change: transform;
 }
 
 .animate-scroll:hover {
   animation-play-state: paused;
-}
-
-/* Desktop speed - slower for better readability */
-@media (min-width: 768px) {
-  .animate-scroll {
-    animation: scroll 15s linear infinite;
-  }
 }
 
 /* Smooth transitions for better performance */

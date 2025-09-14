@@ -103,7 +103,7 @@ export default function ContactPage() {
           <p className={`text-lg sm:text-xl text-blue-100 max-w-3xl mx-auto px-4 transition-all duration-1000 ease-out delay-900 ${
             visibleSections.has('hero') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
           }`}>
-            Get in touch with us for any queries, feedback, or support. We're here to serve you 24/7.
+            Get in touch with us for any queries, feedback, or support.
           </p>
         </div>
       </div>
@@ -266,9 +266,12 @@ export default function ContactPage() {
 
                       <p className="text-gray-700">
 
-                        <strong>Fuel Station:</strong> 24/7<br />
-
-                        <strong>Services:</strong> 4:00 AM - 12:00 PM
+                        <strong>Petrol & Diesel</strong> 24/7<br />
+                        <strong>Pollution Testing Centre</strong> 10:30 AM - 4:30 PM <br />
+                        <strong>Instant Insurance Services</strong> 9:30 AM - 7:30 PM <br />
+                        <strong>Free Oil Change - Two-Wheelers</strong> 6:00 AM - 12:00 PM <br />
+                        <strong>Free Windshield Cleaning - Cars</strong> 9:30 AM - 7:30 PM
+                        
 
                       </p>
 

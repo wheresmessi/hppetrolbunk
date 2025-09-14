@@ -1,39 +1,7 @@
 import { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-
-const awards = [
-  { 
-    id: 1, 
-    title: 'Best Service Award 2023', 
-    year: '2023',
-    logo: '/award.png'
-  },
-  { 
-    id: 2, 
-    title: 'Safety Excellence', 
-    year: '2022',
-    logo: '/award.png'
-  },
-  { 
-    id: 3, 
-    title: 'Customer Choice', 
-    year: '2023',
-    logo: '/award.png'
-  },
-  { 
-    id: 4, 
-    title: 'Environmental Stewardship', 
-    year: '2021',
-    logo: '/award.png'
-  },
-  { 
-    id: 5, 
-    title: 'Quality Excellence', 
-    year: '2023',
-    logo: '/award.png'
-  },
-];
+import AwardsCarousel from '../components/AwardsCarousel';
 
 export default function HomePage() {
   const [heroSlideIndex, setHeroSlideIndex] = useState(0);
@@ -433,54 +401,7 @@ export default function HomePage() {
           <h3 className="text-lg sm:text-xl lg:text-2xl mb-6 font-semibold leading-tight text-[#012F73] text-center">
             Awards & Recognition
           </h3>
-          <div className="relative overflow-hidden">
-            <div className="flex animate-scroll space-x-8 sm:space-x-12" style={{ width: 'max-content' }}>
-              {/* First set of awards */}
-              {awards.map((award) => (
-                <div
-                  key={`first-${award.id}`}
-                  className="flex-shrink-0 flex items-center space-x-4 rounded-lg px-6 py-4 transition-all duration-300 filter sepia-[0.3] hue-rotate-[200deg] saturate-[0.8] brightness-[0.9] hover:filter-none"
-                  style={{ minWidth: '280px' }}
-                >
-                  <div className="w-12 h-12 flex items-center justify-center">
-                    <img
-                      src={award.logo}
-                      alt={`${award.title} logo`}
-                      className="w-12 h-12 object-contain rounded-full"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-sm sm:text-base font-bold mb-1" style={{ color: '#012F73' }}>
-                      {award.title}
-                    </h3>
-                    <p className="text-gray-600 text-xs sm:text-sm">{award.year}</p>
-                  </div>
-                </div>
-              ))}
-              {/* Exact duplicate set for seamless loop */}
-              {awards.map((award) => (
-                <div
-                  key={`second-${award.id}`}
-                  className="flex-shrink-0 flex items-center space-x-4 rounded-lg px-6 py-4 transition-all duration-300 filter sepia-[0.3] hue-rotate-[200deg] saturate-[0.8] brightness-[0.9] hover:filter-none"
-                  style={{ minWidth: '280px' }}
-                >
-                  <div className="w-12 h-12 flex items-center justify-center">
-                    <img
-                      src={award.logo}
-                      alt={`${award.title} logo`}
-                      className="w-12 h-12 object-contain rounded-full"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-sm sm:text-base font-bold mb-1" style={{ color: '#012F73' }}>
-                      {award.title}
-                    </h3>
-                    <p className="text-gray-600 text-xs sm:text-sm">{award.year}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <AwardsCarousel />
         </div>
       </section>
 
